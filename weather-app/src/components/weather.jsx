@@ -25,14 +25,17 @@ import {
 } from "../Redux/action";
 import "../App.css";
 import { Forecast, ForecastBox } from "./Forecast";
+import { Loading } from "./Loading";
+import { REQUEST_OF_DATA } from "../Redux/actionTypes";
 
 export const Weather = () => {
   const toast = useToast();
   const dispatch = useDispatch();
-  const { map, forecast,  error,langitude, weatherData, currentLocation, latitude } =
+  const { map, forecast,isLoading,  error,langitude, weatherData, currentLocation, latitude } =
     useSelector((state) => {
       return {
         map: state.map,
+        isLoading:state.isLoading,
         langitude: state.langitude,
         weatherData: state.weatherData,
         latitude: state.latitude,
@@ -41,7 +44,7 @@ export const Weather = () => {
         error:state.error
       };
     });
-
+console.log(isLoading)
   const [city, setCity] = useState("");
 
   const [isRotate, setIsRotate] = useState(false);
@@ -56,9 +59,11 @@ export const Weather = () => {
       });
     } else {
       dispatch(getWeather(city));
+      setCity("")
     }
   };
   useEffect(() => {
+    dispatch({type:REQUEST_OF_DATA})
     dispatch(getLocation());
   }, [dispatch]);
 
@@ -75,7 +80,10 @@ export const Weather = () => {
       isClosable: true,
     });
   }
-  return (
+  if(isLoading){
+    return <Loading />
+  }
+  return(
     <> <Box >
       <Box
         // h={"80px"}

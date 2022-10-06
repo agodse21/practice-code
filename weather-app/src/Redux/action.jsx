@@ -5,7 +5,7 @@ import * as types from "./actionTypes";
 // export const loginAdmin=(payload)=>dispatch=>{
 
 export const getWeatherOncurrentLocation = (lat1, lon1) => (dispatch) => {
- 
+ dispatch({type:types.REQUEST_OF_DATA})
   axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat1}&lon=${lon1}&appid=aeb2e8e67a323e70bae652830b434d64`
@@ -19,6 +19,7 @@ export const getWeatherOncurrentLocation = (lat1, lon1) => (dispatch) => {
 const lat=data.coord.lat
 const lon=data.coord.lon
 dispatch(get7daysWeather(lat,lon));
+dispatch({type:types.REQUEST_OF_DATA})
       const url = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
     
       dispatch({ type: types.GET_MAP, payload: url });
@@ -35,6 +36,7 @@ dispatch(get7daysWeather(lat,lon));
 };
 
 export const getWeather = (city) => (dispatch) => {
+  dispatch({type:types.REQUEST_OF_DATA})
   axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=aeb2e8e67a323e70bae652830b434d64`
@@ -45,6 +47,7 @@ export const getWeather = (city) => (dispatch) => {
       const lat=data.coord.lat
 const lon=data.coord.lon
 dispatch(get7daysWeather(lat,lon));
+dispatch({type:types.REQUEST_OF_DATA})
       const url = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
       // dispatch(get7daysWeather(city))
       dispatch({ type: types.GET_MAP, payload: url });
@@ -59,6 +62,7 @@ dispatch(get7daysWeather(lat,lon));
 };
 
 export const getMap = (city) => (dispatch) => {
+  dispatch({type:types.REQUEST_OF_DATA})
   const url = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   return dispatch({ type: types.GET_MAP, payload: url });
@@ -70,7 +74,7 @@ export const refreshPage = () => {
 
 export const getLocation = () => (dispatch) => {
   navigator.geolocation.getCurrentPosition(success);
-
+  dispatch({type:types.REQUEST_OF_DATA})
   function success(pos) {
     const crd = pos.coords;
     const latitude = crd.latitude;
@@ -90,9 +94,8 @@ dispatch(get7daysWeather(latitude, langitude));
 
 
 export const get7daysWeather=(latitude,longitude)=>dispatch=>{
-  // let url=`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=caa620f79edc125308792d112d756d75`
-// axios.get( `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=caa620f79edc125308792d112d756d75`)
-let url=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=aeb2e8e67a323e70bae652830b434d64`
+  dispatch({type:types.REQUEST_OF_DATA})
+  let url=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=aeb2e8e67a323e70bae652830b434d64`
 axios.get(url)
 .then((r)=>{
 
