@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Grid Area</title>
+<style>
+     .container {
+         margin: auto;
+        display: grid;
+        grid-template-columns:repeat(4,200px) ;
+        grid-template-rows: repeat(3,100px);
+        gap:10px;
+        grid-template-areas:  
+        "a a b e"
+        "c d b e"
+
+    
+        
+     }
+     .container>div{
+         background-color: #444444;
+         border-radius: 10px;
+         display: flex;
+         align-items: center;
+         padding-left: 20px;
+         color: white;
+         font-size: 30px;
+        
+     }
+     .container>div:nth-child(1){
+      grid-area: a;
+     }
+     .container>div:nth-child(2){
+      grid-area: b;
+     }
+     .container>div:nth-child(3){
+      grid-area: c;
+     }
+     .container>div:nth-child(4){
+      grid-area: d;
+     }
+     .container>div:nth-child(5){
+      grid-area: e;
+     }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+
+      </div>
+</body>
+</html>
