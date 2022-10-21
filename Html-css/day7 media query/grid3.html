@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            width: 100%;
+            height: 100px;
+            background-color: yellow;
+            font-size: 30px;
+        }
+        #container{
+            width: 100%;
+            margin-top: 30px;
+            display: grid;
+            gap: 40px;
+            font-size: 30px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,180px);
+            grid-template-areas: 
+            "a a b"
+            "a a c"
+            "a a d"
+
+        }
+        #container>div:nth-child(1){
+            background-color: red;
+            grid-area: a;
+
+        }
+        #container>div:nth-child(2){
+            background-color:#00ff2a;
+            grid-area: b;
+            
+        }
+        #container>div:nth-child(3){
+            background-color:#00ff2a;
+            grid-area: c;
+        }
+        #container>div:nth-child(4){
+            background-color: #00ff2a;
+            grid-area: d;
+            
+        }
+        @media all and (min-width:480px) and (max-width:720px){
+            #container{ 
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,100px);
+            grid-template-areas: 
+            "a a a"
+            "a a a"
+            "b c d"
+        }
+      }
+      @media all and (min-width:320px) and (max-width:479px){
+        #container{ 
+            grid-template-columns:100%;
+            grid-template-rows: repeat(5,100px);
+            grid-template-areas: 
+            "a"
+            "a"
+            "b"
+            "c"
+            "d"
+        }
+      }
+    </style>
+</head>
+<body>
+    <div id="nav">Navigation</div>
+    <div id="container">
+        <div> LEFT BOX</div>
+        <div>RIGHT 1</div>
+        <div> RIGHT 2</div>
+        <div> RIGHT 3</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans</title>
+    <style>
+        * {
+            font-family: Tahoma, sans-serif;
+        }
+
+        #heading {
+            width: 40%;
+            height: auto;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #heading>h1 {
+            width: 80%;
+            margin: auto;
+            font-size: 35px;
+        }
+
+        #heading>p {
+            padding-top: 10px;
+            font-size: 17px;
+            color: grey;
+        }
+
+        #container {
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                "a b c"
+        }
+
+        #container>div {
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+
+        button {
+            color: blue;
+            padding: 10px 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 1px solid blue;
+            border-radius: 7px;
+            background-color: transparent;
+            font-weight: bold;
+        }
+        button:hover{
+            color: white;
+            background-color: blue;
+            cursor: pointer;
+        }
+
+        #container>div:nth-child(1) {
+            grid-area: a;
+        }
+
+        #container>div>p:first-child {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        #container>div>p:nth-child(3) {
+            font-style: italic;
+            margin-top: -20px;
+            font-size: 17px;
+            color: grey;
+        }
+
+        #container>div>p:nth-child(4) {
+            color: grey;
+            margin: auto;
+            margin-top: 40px;
+            /* width: 70%; */
+            line-height: 25px;
+
+        }
+
+        #container>div:nth-child(1)>h1 {
+            color: #09ab78;
+        }
+
+        #container>div:nth-child(2) {
+            grid-area: b;
+        }
+
+        #container>div:nth-child(2)>h1 {
+            color: rgb(255, 115, 0);
+        }
+
+        #container>div:nth-child(3) {
+            grid-area: c;
+        }
+        #container>div:nth-child(3)>h1{
+            color: blue;
+        }
+        /* Medium Screens: */
+        @media all and (min-width:480px) and (max-width:720px){
+            #container {
+             width: 95%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2,auto);
+            grid-template-areas: 
+            "a b"
+            "c c"
+        }
+        #container>div:nth-child(3){
+            width: 50%;
+        }
+        #heading {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #heading>h1 {
+            margin: auto;
+            width: 100%;
+            font-size: 25px;
+        }
+
+        #heading>p {
+            padding-top: 10px;
+            font-size: 17px;
+            color: grey;
+        }
+
+            
+        }
+        @media all and (min-width:320px) and (max-width:479px){
+            #container {
+             width: 95%;
+            grid-template-columns: 95%;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+        }
+      
+        
+        #heading {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #heading>h1 {
+            margin: auto;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        #heading>p {
+            padding-top: 10px;
+            font-size: 17px;
+            color: grey;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Choose a plan that right for your bussiness</h1>
+        <p>We colloct reviwes from our user so you can get an honest opinion of what an exprience with our website are
+            really like! </p>
+    </div>
+    <div id="container">
+        <div>
+            <p>Starter Plan</p>
+            <h1>Free</h1>
+            <p>per month</p>
+            <p>Lorem eaque nulla quod dolore voluptatibus id repellendus alias, vel illum tempore. Ipsam, magni.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <p>Starter Plan</p>
+            <h1>$39.00</h1>
+            <p>per month</p>
+            <p>Lorem eaque nulla quod dolore voluptatibus id repellendus alias, vel illum tempore. Ipsam, magni.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <p>Starter Plan</p>
+            <h1>$59.00</h1>
+            <p>per month</p>
+            <p>Lorem eaque nulla quod dolore voluptatibus id repellendus alias, vel illum tempore. Ipsam, magni.</p>
+            <button>Start Now</button>
+        </div>
+    </div>
+</body>
+
+</html>
