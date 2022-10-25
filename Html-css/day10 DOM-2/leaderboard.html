@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leaderboard</title>
+    <style>
+        #score {
+            width: 30%;
+            margin: auto;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #score>div {
+            border: 2px solid black;
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        #min {
+            background-color: red;
+        }
+
+        #max {
+            background-color: green;
+        }
+
+        #minmaxtxt {
+            margin: auto;
+            margin-top: -20px;
+            width: 25%;
+
+            font-size: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #scoretxt {
+            margin: auto;
+            text-align: center;
+            font-size: 25px;
+
+        }
+
+        #display {
+            width: 25%;
+            height: 100px;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            background-color: grey;
+            margin: auto;
+        }
+
+        #btn {
+            width: 25%;
+            margin: auto;
+            margin-top: 10px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-template-areas:
+                "a b c"
+                "d e f"
+                "g h i"
+                "m j k"
+        }
+
+        #btn>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            border: 1px solid green;
+
+        }
+
+        #btn>div:nth-child(1) {
+            grid-area: a;
+        }
+
+        #btn>div:nth-child(1):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(2) {
+
+            grid-area: b;
+        }
+
+        #btn>div:nth-child(2):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(3) {
+            grid-area: c;
+        }
+
+        #btn>div:nth-child(3):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(4) {
+            grid-area: d;
+        }
+
+        #btn>div:nth-child(4):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(5) {
+            grid-area: e;
+        }
+
+        #btn>div:nth-child(5):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(6) {
+            grid-area: f;
+        }
+
+        #btn>div:nth-child(6):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(7) {
+            grid-area: g;
+        }
+
+        #btn>div:nth-child(7):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(8) {
+            grid-area: h;
+        }
+
+        #btn>div:nth-child(8):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(9) {
+            grid-area: i;
+        }
+
+        #btn>div:nth-child(9):hover {
+            background-color: red;
+            color: white;
+        }
+
+        #btn>div:nth-child(10) {
+            grid-area: j;
+        }
+
+        #btn>div:nth-child(10):hover {
+            background-color: red;
+            color: white;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .purple {
+            background-color: purple;
+            color: white;
+        }
+
+        #enterbtn {
+            width: 25%;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px 40px;
+            display: block;
+        }
+
+        #enterbtn:hover {
+            background-color: rgb(255, 77, 0);
+            width: 28%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="score">
+        <div id="min">43</div>
+        <div id="max">2019</div>
+    </div>
+    <div id="minmaxtxt">
+        <h3>MIN</h3>
+        <h3>MAX</h3>
+    </div>
+    <h3 id="scoretxt">SCORE</h3>
+    <div id="display">#</div>
+    <div id="btn">
+        <div class="green">1</div>
+        <div class="orange">2</div>
+        <div class="green">3</div>
+        <div class="orange">4</div>
+        <div class="orange">5</div>
+        <div class="orange">6</div>
+        <div class="green">7</div>
+        <div class="orange">8</div>
+        <div class="green">9</div>
+        <div class="purple">0</div>
+    </div>
+    <button id="enterbtn">ENTER</button>
+
+</body>
+
+</html>
+<script>
+
+    let keys = document.querySelectorAll("#btn>div");
+    let bag = "";
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", mycal);
+    }
+    function mycal(event) {
+        let targetnum = event.target.innerText;
+        bag = bag + targetnum;
+        //   console.log(bag);
+        document.querySelector("#display").innerText = bag;
+
+    }
+
+    document.querySelector("#enterbtn").addEventListener("click", scorecom);
+    
+    function scorecom() {
+        let curntscore = bag;
+        let min = document.querySelector("#min").innerText;
+        let max = document.querySelector("#max").innerText;
+        if (curntscore < min) {
+            // min=curntscore;
+            document.querySelector("#min").innerText = curntscore;
+            bag = "";
+
+        } else if (curntscore > max) {
+            // max=curntscore;
+            document.querySelector("#max").innerText = curntscore;
+            bag = "";
+        }
+    }
+</script>

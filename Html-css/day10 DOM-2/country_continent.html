@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id = "continent_select">
+        <option value="">Please Select A country</option>
+        <option value = "Asia"> India </option>
+        <option value = "North America"> United States of America </option>
+        <option value = "Asia"> China </option>
+        <option value = "Asia"> Nepal </option>
+        <option value = "Mainland Australia "> Australia </option>
+        <option value = "Europe"> France </option>
+        <option value = "Europe"> Germany</option>
+        <option value = "Africa">Nigeria</option>
+        <option value = "North America"> Mexico</option>
+        <option value = "South America"> Argentina</option>
+        <option value = "South America"> Brazil</option>
+        <option value = "North America">Canada</option>
+        <option value = "Asia">Singapore</option>
+        <option value = "Europe">Sweden</option>
+    </select>
+    <button id="findbtn">Find continent</button>
+</body>
+</html>
+<script>
+
+let select = document.querySelector("#continent_select"),
+    input = document.querySelector('input[type="button"]');
+    let bag="";
+select.addEventListener('change',colloectinfo)
+function colloectinfo(event){
+    bag= event.target.value;
+    // alert(bag)
+    
+};
+document.querySelector("#findbtn").addEventListener("click", checkcontinent);
+
+function checkcontinent(){
+
+    let choice=bag;
+switch (choice) {
+  case 'Asia':
+    alert("The continent is Asia");
+    break;
+  case 'North America':
+  alert("The continent is North America");
+    break;
+    case 'Mainland Australia':
+    alert("The continent is Mainland Australia");
+    break;
+    case 'Europe':
+    alert("The continent is Europe");
+    break;
+    case 'Africa':
+    alert("The continent is Africa");
+    break;
+    case 'South America':
+    alert("The continent is South America");
+    break;
+    case 'Africa':
+    alert("The continent is Africa");
+    break;
+    case '':
+    alert("Please select A country");
+    break;
+  default:
+   alert("Invalid Choice");
+}
+}
+
+
+
+</script>
+
+
+
+
+
+
