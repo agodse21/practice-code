@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM SUBMIT BASIC DOM</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Please Enter your Name" /><br/><hr>
+        <label for="Age">Age</label>
+        <input type="number" id="age" placeholder="Please Enter Your Age"/><br/><hr>
+        <label for="Gender ">Gender </label>
+        <select id="Gen">
+            <option value="">Please Select Your Gender </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br/><hr>
+        <label for="Email">Email</label>
+        <input type="email" id="mail" placeholder="Enter Your Email"/><br/><hr>
+        <label for="Mobile">Mobile Number</label>
+        <input type="number" id="mob" placeholder="Please Enter Your Mobile Number"><br/><hr>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", getData);
+    function getData() {
+      event.preventDefault();
+      let name = document.querySelector("#name").value;
+      let age = document.querySelector("#age").value;
+      let gender=document.querySelector("#Gen").value;
+    let  email = document.querySelector("#mail").value;
+    let  mob = document.querySelector("#mob").value;
+    let data=[];
+    let obj={};
+    obj["name"]=name;
+    obj["age"]=age;
+    obj["gender"]=gender;
+    obj["mail"]=email;
+    obj["mobile"]=mob;
+    data.push(obj);
+    console.log(data)
+
+    }
+  </script>

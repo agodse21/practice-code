@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>U2C3 Mock</title>
+  <style>
+    #report {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 10px;
+    }
+
+    #report>div {
+      width: 25%;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <select id="month">
+      <option value="January">JANUARY</option>
+      <option value="February">FEB</option>
+      <option value="MARCH">MARCH</option>
+      <option value="APRIL">APRIL</option>
+      <option value="MAY">MAY</option>
+      <option value="JUNE">JUNE</option>
+      <option value="JULY">JULY</option>
+      <option value="AUGUST">AUGUST</option>
+      <option value="SEPETEMBER">SEPETEMBER</option>
+      <option value="OCTOBER">OCTOBER</option>
+      <option value="NOVEMBER">NOVEMBER</option>
+      <option value="DECEMBER">DECEMBER</option>
+    </select>
+
+    <input id="income" type="number" placeholder="Enter Income" />
+
+    <input id="expense" type="number" placeholder="Enter expense" />
+
+    <input type="submit" />
+  </form>
+
+  <div id="report">
+    <!-- Append your cards here -->
+  </div>
+</body>
+
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", myfunction);
+  function myfunction(event) {
+    event.preventDefault();
+
+    let month = document.querySelector("#month").value;
+    let income = document.querySelector("#income").value;
+    let expense = document.querySelector("#expense").value;
+    // if(expense=="" || income==""){
+    //       alert("Please Enter Value")
+    //     }else{
+    // creating element
+    let div = document.createElement("div");
+    let h1 = document.createElement("h1");
+    h1.innerText = month;
+
+    let p1 = document.createElement("p");
+    p1.innerText = income;
+
+    let p2 = document.createElement("p");
+    p2.innerText = expense;
+
+    let h3 = document.createElement("h3");
+
+
+    if (income < expense) {
+      h3.innerText = "DEBT";
+      h3.style.color = "red"
+    } else if (income > expense) {
+      h3.innerText = "SAVE";
+      h3.style.color = "green"
+    } else if (expense == income) {
+      h3.innerText = "BREAKEVEN";
+      h3.style.color = "orange"
+    }
+
+    
+
+    let btn = document.createElement("button");
+    btn.innerText = "DELETE";
+    btn.addEventListener("click", deleteitem);
+    function deleteitem(event) {
+      event.target.parentNode.remove();
+    }
+    div.append(h1, p1, p2, h3, btn);
+    document.querySelector("#report").append(div);
+
+  }
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons by map</title>
+    <style>
+        button{
+            /* width: 100px; */
+            border: none;
+            padding: 20px 40px;
+            margin-right: 10px;
+            font-size: 22px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let btnarr=[ 
+        {name:"Primary",color:"white",bgcolor:"blue"},
+    {name:"Secondary",color:"white",bgcolor:"grey"},
+    {name:"Success",color:"white",bgcolor:"green"},
+    {name:"Danger",color:"white",bgcolor:"red"},
+    {name:"Warning",color:"black",bgcolor:"yellow"},
+    {name:"Info",color:"white",bgcolor:"cyan"},
+    {name:"Light",color:"black",bgcolor:"white"},
+    {name:"Dark",color:"white",bgcolor:"black"},
+    {name:"Link",color:"blue",bgcolor:"transparent"},
+    ];
+    btnarr.map( function (ele,index,arr) {
+    let btn=document.createElement("button");
+    btn.innerText=ele.name;
+    btn.style.backgroundColor=ele.bgcolor;
+    btn.style.color= ele.color;
+    document.querySelector("body").append(btn);
+
+    });
+</script>
