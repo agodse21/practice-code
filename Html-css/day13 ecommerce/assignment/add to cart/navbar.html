@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        #nav {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            background-color: rgb(5, 74, 102);
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #logo {
+            display: flex;
+            width: 20%;
+            height: 100%;
+            align-items: center;
+            color: white;
+            margin-left: 20px;
+        }
+
+        #logo:hover {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #option {
+
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly;
+
+        }
+
+        #option>div {
+           cursor: pointer;
+            color: white;
+            width: 23%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* #option>div:hover {
+            background-color: rgb(2, 38, 52);
+            height: 90%;
+            font-size: 20px;
+            border-radius: 10px;
+            text-decoration: underline;
+
+        } */
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+a:visited{
+    color: white;
+}
+        a:hover {
+  text-decoration: underline;
+ font-size: 25px;
+}
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div id="logo">Reebok</div>
+        <div id="option">
+            <div><a id="men" target="_blank" href="mensPage.html">Men</a></div>
+            <div><a id="women" target="_blank" href="WomensPage.html">Women</a></div>
+            <div><a target="_blank" href="login.html">Login</a></div>
+            <div><a target="_blank" href="signup.html">Signup</a></div>
+            <div><a target="_blank" href="Cart.html">My Cart</a></div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+document.querySelector("#men").addEventListener("click",checklogin);
+document.querySelector("#women").addEventListener("click",checklogin);
+
+var loadVal = JSON.parse(localStorage.getItem('logdetails'))
+
+
+function checklogin(){
+
+    if(loadVal==null){
+        alert("Hey User!!Please Sign In First")
+        window.location.href="login.html";
+    }
+   
+   
+ 
+}
+
+     
+
+</script>

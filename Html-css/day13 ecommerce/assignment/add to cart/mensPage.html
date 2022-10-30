@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mensPage</title>
+    <style>
+      #parent {
+        margin: auto;
+        font-family: "Times New Roman", Times, serif;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      #parent > div {
+        margin-top: 20px;
+        margin: auto;
+      }
+
+      p {
+        color: #666666;
+        font-family: sans-serif;
+        font-size: 20px;
+      }
+
+      #head {
+        text-align: center;
+      }
+
+      .select {
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="head">Mens Section</h1>
+    <hr />
+    <!-- <p></p> -->
+    <select class="select" id="sort">
+      <option value="">Sort Product By Name</option>
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+    <select class="select" id="filter">
+      <option value="">Filter Product By company</option>
+      <option value="ROADSTER">ROADSTER</option>
+      <option value="DENIM">DENIM</option>
+    </select>
+    <div id="parent"></div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#sort").addEventListener("change", sortingproduct);
+  function sortingproduct() {
+    let selected = document.getElementById("sort").value;
+    // console.log(selected)
+    // ascending
+    // descending
+    if (selected == "ascending") {
+      let res = mens.sort(function (a, b) {
+        if (a.company > b.company) return 1;
+        if (a.company < b.company) return -1;
+        return 0;
+        //  return a.price-b.price;
+      });
+      displayitem(res);
+    } else if (selected == "descending") {
+      let x = mens.sort(function (a, b) {
+        if (a.company > b.company) return -1;
+        if (a.company < b.company) return 1;
+        return 0;
+
+        //    mens.sort(function (a, b) {
+        //      return b.price-a.price;
+      });
+      displayitem(x);
+    }
+  }
+
+  document.querySelector("#filter").addEventListener("change", filterproduct);
+  function filterproduct() {
+    let selected = document.getElementById("filter").value;
+    let filter = mens.filter(function (element) {
+      return element.company == selected;
+    });
+    displayitem(filter);
+  }
+
+  let mensData = [
+    {
+      image:
+        "  https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/6696326/2018/9/27/6b18ac6a-ef42-46dd-9b8b-2c5fa47e84711538044457122-Roadster-Men-Blue-Regular-Fit-Faded-Casual-Shirt-96415380444-1.jpg",
+      company: "ROADSTER",
+      type: "Men Slim fit shirt",
+      price: "999",
+      id: 1,
+    },
+    {
+      image:
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1729391/2019/8/28/a9d4a7aa-af7e-4a37-a9d4-a94dc8c057e81566992341974-WROGN-Navy-Blue-Slim-Fit-Checked-Casual-Shirt-52415669923403-1.jpg",
+      company: "WROGN",
+      type: "Men fit shirt",
+      price: "599",
+      id: 2,
+    },
+    {
+      image:
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10673544/2019/9/24/6b9c7688-7ca2-4d11-9e5b-a3745ecd8f761569310358973-The-Indian-Garage-Co-Men-Shirts-8481569310357131-1.jpg",
+      company: "DENIM",
+      type: "Men Denim shirt",
+      price: "699",
+      id: 3,
+    },
+    {
+      image:
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11780968/2020/4/3/11591b03-97f1-4907-b735-906984c4bcd61585905051096HIGHLANDERMenGreenWhiteSlimFitPrintedCasualShirt1.jpg",
+      company: "HIGHLANDER",
+      type: "Men line shirt",
+      price: "899",
+      id: 4,
+    },
+  ];
+  let mens = mensData;
+  let cartArr = JSON.parse(localStorage.getItem("cartlist")) || [];
+  // let cartArr = JSON.parse(localStorage.getItem("cartlist")) || [];
+
+  function displayitem(mensData) {
+    document.querySelector("#parent").innerHTML = "";
+    mensData.map(function (elem) {
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.setAttribute("src", elem.image);
+
+      let h2 = document.createElement("h2");
+      h2.innerText = elem.company;
+
+      let p = document.createElement("p");
+      p.innerText = elem.type;
+      let h3 = document.createElement("h2");
+      h3.innerText = elem.price;
+      let counter = 1;
+      let btn = document.createElement("button");
+      btn.innerText = "Add to Cart";
+      btn.addEventListener("click", addtocart);
+      function addtocart(event) {
+        if (cartArr.length == 0) {
+          let a = elem;
+          a.counter = 1;
+          cartArr.push(a);
+        } else {
+          let flag = false;
+          for (let i = 0; i < cartArr.length; i++) {
+            if (cartArr[i].id == elem.id) {
+              cartArr[i].counter++;
+              flag = true;
+              break;
+            }
+          }
+          if (flag == false) {
+            let a = elem;
+            a.counter = 1;
+            cartArr.push(a);
+          }
+        }
+
+        localStorage.setItem("cartlist", JSON.stringify(cartArr));
+        console.log(cartArr);
+        alert("product added to cart");
+        window.location.href = "Cart.html";
+      }
+
+      div.append(img, h2, p, h3, btn);
+      document.querySelector("#parent").append(div);
+    });
+  }
+  displayitem(mensData);
+</script>

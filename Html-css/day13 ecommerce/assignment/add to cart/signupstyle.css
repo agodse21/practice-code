@@ -1,0 +1,74 @@
+img{
+    margin: auto;
+   padding: 20px 0px;
+  width: 8%;
+    
+       display: flex;
+       justify-content: center;
+    
+}
+body{
+    font-family: Verdana, sans-serif;
+    background-image: linear-gradient(to right, rgb(111, 194, 232) , rgb(255, 255, 255));
+}
+form{
+   background-color: white;
+   border-radius: 10px;
+    width: 30%;
+    padding: 40px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* display: flex;
+    justify-content: center; */
+}
+/* form i {
+    margin-left: -30px;
+    cursor: pointer;
+} */
+h2{
+
+    padding: 20px;
+    margin-top: -40px;
+    text-align: center;
+}
+label{
+   
+    display: block;
+}
+input{
+    width: 98%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 1px solid grey;
+    padding-left: 15px; 
+    font-size: 18px;
+    border-radius: 7px;
+   
+}
+#term{
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    margin-bottom: 30px;
+}
+#signin{
+    text-align: center;
+    color: grey;
+}
+#btn{
+    background-color: rgb(212, 211, 211);
+    color: grey;
+    border: none;
+}
+#btn:hover{
+    background-color: rgb(4, 130, 240);
+    color: white;
+    cursor: pointer;
+}
+#forgetpass{
+    display: block;
+    text-align: right;
+    margin-top: -15px;
+    
+}

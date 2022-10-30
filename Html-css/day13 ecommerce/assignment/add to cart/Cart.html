@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Bag</title>
+    <style>
+      /* #main{
+            /* display: grid;
+            gap: 20px;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows: auto; */
+      /* } */
+      #main {
+        display: flex;
+      }
+      #main > div {
+        width: 50%;
+        margin-right: 10px;
+
+        /* border: 1px solid red */
+      }
+      #main > div:first-child {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #cartitem > div {
+        display: flex;
+      }
+      .card {
+        padding-left: 20px;
+      }
+
+      img {
+        width: 120px;
+        height: 150px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 14px;
+      }
+
+      #total > div {
+        /* margin: auto; */
+        /* margin-top: 20px; */
+        background-image: linear-gradient(
+          to right,
+          rgba(76, 105, 193, 0.731),
+          rgb(109, 20, 253)
+        );
+        width: 70%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: white;
+        padding: 10px;
+        /* position: fixed; */
+      }
+      #total > div > h1 {
+        /* padding-top: 10px; */
+        text-align: center;
+      }
+      .totalprice {
+        font-size: 25px;
+      }
+      table {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      thead td {
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      tbody td {
+        padding-top: 10px;
+        font-size: 25px;
+      }
+      #placeorderbtn {
+        display: block;
+        margin: auto;
+        margin-top: 40px;
+        color: blue;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 7px;
+        padding: 10px 30px;
+        background-color: white;
+        border: none;
+      }
+      #placeorderbtn:hover {
+        color: white;
+        cursor: pointer;
+        background-color: orangered;
+      }
+      #head {
+        text-align: center;
+      }
+      #coupontitle {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      #couponsection {
+        margin: auto;
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #coupons {
+        font-size: 20px;
+      }
+      #promobtn {
+        background-color: aqua;
+        padding: 8px 30px;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+      }
+      #promobtn:hover {
+        cursor: pointer;
+        color: white;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="cartitem">
+        <h1 id="head">MY CART</h1>
+        <hr />
+      </div>
+      <div id="total">
+        <div>
+          <h1>PRICE DETAILS</h1>
+          <hr />
+          <table>
+            <thead>
+              <td>Total Quantity</td>
+              <td>Total Price</td>
+            </thead>
+            <tbody>
+              <td id="quantity">0</td>
+              <td id="totalprice">0</td>
+            </tbody>
+          </table>
+          <button id="placeorderbtn">Place Order</button>
+          <hr />
+          <p id="coupontitle">Available Coupons</p>
+          <div id="couponsection">
+            <p id="coupons">masai30</p>
+            <button id="promobtn">Apply Promo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  // coupon
+  let total = 0;
+  let disc = 0;
+  let coupons = document.querySelector("#coupons").innerText;
+  document.querySelector("#promobtn").addEventListener("click", applycoupon);
+  function applycoupon() {
+    if (coupons == "masai30") {
+      let per = total * 0.3;
+      disc = total - per;
+      alert("Congrat!!!, You have got 30% Discount");
+      document.querySelector("#totalprice").innerText = disc;
+      total = disc;
+    }
+  }
+
+  var loadcart = JSON.parse(localStorage.getItem("cartlist"));
+
+  let quat = 0;
+
+  let sum = 0;
+  loadcart.map(function (elem, index) {
+    quat = quat + elem.counter;
+
+    document.querySelector("#quantity").innerText = quat;
+    sum = sum + Number(elem.price) * elem.counter;
+    total = sum;
+    document.querySelector("#totalprice").innerText = total;
+
+    let div = document.createElement("div");
+    let div2 = document.createElement("div");
+    div2.setAttribute("class", "card");
+
+    let img = document.createElement("img");
+    img.setAttribute("src", elem.image);
+
+    let h2 = document.createElement("h2");
+    h2.innerText = elem.company;
+
+    let p = document.createElement("p");
+    p.innerText = elem.type;
+    let h3 = document.createElement("h2");
+    h3.innerText = elem.price;
+
+    let p2 = document.createElement("p");
+    p2.innerText = "Quantity:-" + " " + elem.counter;
+
+    let remove = document.createElement("button");
+    remove.innerText = "remove";
+    remove.addEventListener("click", function () {
+      deleteitem(index);
+    });
+
+    let hr = document.createElement("hr");
+    div2.append(h2, p, h3, p2, remove, hr);
+    div.append(img, div2);
+    document.querySelector("#cartitem").append(div);
+  });
+
+  document
+    .querySelector("#placeorderbtn")
+    .addEventListener("click", pricestore);
+  function pricestore() {
+    let totalamt = [{ total: total }];
+    localStorage.setItem("pricestore", JSON.stringify(totalamt));
+    window.location.href = "payment.html";
+  }
+
+  function deleteitem(index) {
+    //  alert(" working on delete ")
+    loadcart.splice(index, 1);
+    localStorage.setItem("cartlist", JSON.stringify(loadcart));
+    window.location.reload();
+  }
+</script>

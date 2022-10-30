@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payemt Page</title>
+    <style>
+        #main{
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 80%;
+            /* display: flex; */
+        }
+        #head{
+            background-color: rgb(0, 185, 247);
+            height: 70px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+            color: white;
+        }
+        #cardsection{
+            /* background-color: grey; */
+            width: 100%;
+            padding: 20px;
+            display: flex;
+
+            /* height: 100px; */
+        }
+        #cardtitle{
+font-size: 25px;
+font-weight: bold;
+        }
+        form{
+            width: 60%;
+        }
+        hr{
+            width: 99%;
+            margin-left: -15px;
+        }
+        label{
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 18px;
+            display: block;
+          
+        }
+        input{
+            margin: 10px 0px;
+            width: 30%;
+            height: 30px;
+            border-radius: 5px;
+        }
+        #date{
+            width: 10%;
+        }
+        #cvv{
+            width: 10%;
+        }
+        #pay{
+            background-color: orangered;
+            color: white;
+            border: none;
+            font: 1em sans-serif;
+            font-weight: bold;
+            border-radius: 5px;
+         width: 20%;
+         height: 40px;
+        }
+        #pay:hover{
+            background-color: rgb(98, 0, 255);
+            cursor: pointer;
+        }
+        #showprice{
+            background-color: red;
+            width: 30%;
+           height: auto;
+        }
+        h2{
+            text-align: center;
+            color: white;
+        }
+      #hrtotal{
+        
+      margin-left: 0px;
+      }
+#showtotal{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+    <div id="head"> <h1>PAYMENT OPTION</h1></div>
+    <div id="cardsection">
+<form >
+    <label id="cardtitle">CREDIT/DEBIT/ATM CARD</label>
+    <hr>
+    <label>CARD NUMBER</label>
+    <input type="text/number"  maxlength="16" id="cardnumber"  placeholder="Enter Card Number"/>
+    <label for="date">EXP DATE</label>
+    <input id="date" type="date" placeholder="valid till"/>
+    <label for="cvv">CVV</label>
+    <input type="password" maxlength="4" id="cvv" placeholder="CVV">
+    <label for="name">NAME</label>
+ <input type="text" id="name" placeholder="Enter card holder name"> 
+ <input  id="pay" type="submit">
+ <!-- <button>PAY</button>   -->
+<label id="hint">Hint:CN:1234567891234567 Pass:1234
+
+</label>
+</form>
+<div id="showprice">
+    <h2>Total Amount</h2>
+    <hr id="hrtotal">
+    <p id="showtotal">0</p>
+</div>
+    </div>
+    
+</div>
+</body>
+</html>
+<script>
+document.querySelector("form").addEventListener("submit",checkcard);
+
+let amout=JSON.parse(localStorage.getItem("pricestore"))
+amout.map(function(el){
+    document.querySelector("#showtotal").innerText=el.total;
+})
+
+let loadcard=JSON.parse(localStorage.getItem("savedcard"))
+function checkcard(event){
+    event.preventDefault();
+   let cardno=document.querySelector("#cardnumber").value;
+   let date=document.querySelector("#date").value;
+   let cvv=document.querySelector("#cvv").value;
+   let name=document.querySelector("#name").value;
+   
+if(cardno=="" || date=="" ||cvv=="" || name==""){
+    alert("Please Fill all Details")
+}else{
+    loadcard.map(function(elem){
+    if(elem.cardNo==cardno && elem.cvv==cvv)
+    {
+        alert("OTP Send on your Mobile");
+        window.location.href="otp.html";
+    }
+    else{
+        alert("Please enter All details Correctly")
+    }
+   }) 
+}
+  
+}
+
+let savedcard=[
+    {cardNo:1234567891234567,date:2025,cvv:1234}
+]
+ localStorage.setItem("savedcard",JSON.stringify(savedcard))
+
+</script>

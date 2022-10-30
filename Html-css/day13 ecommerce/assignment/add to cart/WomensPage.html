@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WomensPage</title>
+    <style>
+        #parent{
+            margin: auto;
+            font-family: 'Times New Roman', Times, serif;
+            width: 100%;
+           display: grid;
+           grid-template-columns: repeat(4,1fr);
+
+        }
+        #parent>div{
+            margin-top: 20px;
+            margin: auto;
+           
+        }
+        p{
+            color: #666666;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+        #head{
+            text-align: center;
+        }
+        #filter {
+            font-weight: bold;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">Womens Section</h1>
+    <hr>
+    <select id="filter">
+        <option value="">Sort Product By Price</option>
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+        
+    </select>
+    <div id="parent">
+    </div>
+</body>
+</html>
+
+ <script>
+
+
+document.querySelector("select").addEventListener("change", sortingproduct);
+    function sortingproduct() {
+        let selected = document.getElementById("filter").value;
+        // console.log(selected)
+        // ascending
+        // descending
+        if (selected == "ascending") {
+            womens.sort(function (a, b) {
+             return a.price-b.price;   
+        })
+        displayitem(womens);
+        }
+        if(selected=="descending"){
+            womens.sort(function (a, b) {
+             return b.price-a.price;   
+        })
+        displayitem(womens);
+        }
+    }
+let womensData=[
+{ image:" https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12595594/2020/10/15/b6e22b58-3450-468f-afeb-3218b6ce7acb1602737925709SareemallNavyBluePolyChiffonSolidEthnicPartywearSareewithMat1.jpg",
+company:"ANTHEAA",type:"Floral Printed Dress",price:"1155",id:11 },
+{ image:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12133280/2020/7/29/92107b27-71c2-4d92-9d35-caeecdbc40fa1596018921474KSUTfuchsiaabstractprintedflaredfulllengthplacketkurtawithro1.jpg",
+company:"LIBAS",type:"Ethnic Cotton Maxi Dress",price:"649",id:22 },
+{ image:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14059226/2021/6/12/572a6ab9-7c46-4e08-a638-46f178e775b01623482101341PUMAMenOliveGreenSolid10ForestNightTrackpantsTshirtsPumaMenS1.jpg" ,
+company:"PLUSS",type:"A line dress",price:"588",id:33},
+{ image:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17847142/2022/4/11/9ef07b9b-6732-4a10-8927-d02c1ed231681649671032305ANDGold-TonedSheathDress1.jpg",
+company:"AND",type:"Self Design Dress",price:"899" ,id:44 },
+];
+let womens=womensData;
+let cartArr= JSON.parse(localStorage.getItem("cartlist")) || [];
+
+function displayitem(womensData) {
+
+womensData.map(function(elem){
+
+let div=document.createElement("div");
+
+let img=document.createElement("img");
+img.setAttribute("src",elem.image);
+
+let h2=document.createElement("h2");
+h2.innerText=elem.company;
+
+let p=document.createElement("p");
+p.innerText=elem.type;
+let h3=document.createElement("h2");
+h3.innerText=elem.price;
+let counter=1;
+let btn=document.createElement("button");
+btn.innerText="Add to Cart";
+btn.addEventListener("click",addtocart);
+function addtocart(event){
+
+
+   
+    if(cartArr.length==0){
+    let a=elem;
+             a.counter=1;
+            cartArr.push(a);
+}
+else{
+    let flag=false;
+    for(let i=0;i<cartArr.length;i++){
+        if(cartArr[i].id==elem.id){
+            cartArr[i].counter++;
+            flag=true;
+            break;
+
+        }
+        
+    } if(flag==false){
+        let a=elem;
+            a.counter=1;
+            cartArr.push(a);
+    }
+  
+}
+    
+
+
+    
+    
+  
+     localStorage.setItem("cartlist",JSON.stringify(cartArr))
+console.log(cartArr)
+     alert("product added to cart")
+     window.location.href="Cart.html";
+
+}
+
+div.append(img,h2,p,h3,btn);
+document.querySelector("#parent").append(div);
+        })
+    }
+    displayitem(womensData);
+</script>
