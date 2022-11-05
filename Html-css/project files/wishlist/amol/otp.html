@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Otp</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #otp{
+            display: block;
+            margin: auto;
+            width: 20%;
+            height: 30px;
+            border-radius: 5px;
+        }
+        #submitbtn{
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            background-color: blue;
+            border: none;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+           padding: 10px 135px;
+        }
+        #submitbtn:hover{
+            cursor: pointer;
+              background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter OTP</h1>
+    <hr>
+    <input type="password" id="otp" maxlength="4" placeholder="Enter otp"/>
+    <button id="submitbtn">Submit</button>
+</body>
+</html>
+<script>
+   
+    document.getElementById("submitbtn").addEventListener("click",otpcheck);
+    let cartdata=JSON.parse(localStorage.getItem("cartlist"))
+    function otpcheck(){
+        let otp=document.querySelector("#otp").value;
+       
+      if(otp=="1234"){
+        alert("PayMent Successful,Thank You!!")
+        // localStorage.removeItem(cartdata);
+        window.location.href="index.html"
+      }else{
+        alert("Please Enter Valid OTP")
+      }
+    }
+//     function deleteitem(index){
+// //  alert(" working on delete ")
+// loadcart.splice(index,1)
+// localStorage.setItem("cartlist",JSON.stringify(loadcart))
+// window.location.reload();
+
+</script>
