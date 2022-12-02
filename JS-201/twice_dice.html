@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #winner{
+            width: 18%;
+            margin: auto;
+            /* background-color: teal; */
+            height: 100px;
+            border-radius: 5px;
+            color:black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 30px;
+            border: 3px solid black;
+        }
+        .main{
+            width: 80%;
+            height: 200px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+       .main>div{
+        width: 20%;
+        height: 100%;
+      border:3px solid black;
+      border-radius: 5px;
+      display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #roll{
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            color: white;
+            background-color: orangered;
+            width: 250px;
+            padding: 25px 0px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+           
+        }
+        h1{
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <h1>TWICE AND DICE</h1>
+    <div id="winner">Winner</div>
+    <div class="main">
+        <div id="member-1">member-1</div>
+        <div id="member-2">member-2</div>
+        <div id="member-3">member-3</div>
+       
+    </div>
+    <button id="roll">ROLL THE DICE</button>
+</body>
+</html>
+<script>
+//  document.getElementById("winner").innerText;
+    let dic = {
+  side: 6,
+  roll: function () {
+    let ranNumber = Math.floor(Math.random() * this.side) + 1;
+    return ranNumber ;
+  }
+}
+let dic2 = {
+  side: 6,
+  roll: function () {
+    let ranNumber = Math.floor(Math.random() * this.side) + 1;
+    return ranNumber ;
+  }
+}
+let dic3 = {
+  side: 6,
+  roll: function () {
+    let ranNumber = Math.floor(Math.random() * this.side) + 1;
+    return ranNumber ;
+  }
+}
+function printNumber(number) {
+  let display = document.getElementById('member-1');
+  display.innerHTML = number;
+}
+function printNumber1(number) {
+  let display = document.getElementById('member-2');
+  display.innerHTML = number;
+}
+function printNumber2(number) {
+  let display = document.getElementById('member-3');
+  display.innerHTML = number;
+}
+
+
+let button = document.getElementById('roll');
+
+button.onclick = function() {
+  let result = dic.roll();
+  let result1 = dic2.roll();
+  let result2= dic3.roll();
+  printNumber(result);
+  printNumber1(result1);
+  printNumber2(result2);
+
+  if(result >= result1 && result >= result2) {
+    printNumber(result);
+    let winner= document.getElementById("winner").innerText="Winner is Member-1"+"\n"+"Score is "+result;
+    document.getElementById("winner").style.backgroundColor="green";
+ 
+}
+else if(result1 >= result && result1 >= result2)
+{
+  printNumber1(result1);
+  document.getElementById("winner").innerText="Winner is Member-2"+"\n"+"Score is "+result1;
+  document.getElementById("winner").style.backgroundColor="yellow";
+}
+else if(result2 >= result && result2 >= result1)
+{ 
+  printNumber2(result2);
+  let winner=document.getElementById("winner").innerText="Winner is Member-3"+"\n"+"Score is "+result2;
+  document.getElementById("winner").style.backgroundColor="red";
+}
+else if(result2 == result && result2 == result1)
+{ 
+  printNumber2(result2);
+  let winner=document.getElementById("winner").innerText=result2;
+  document.getElementById("winner").style.backgroundColor="blue";
+}
+}
+ 
+
+</script>
