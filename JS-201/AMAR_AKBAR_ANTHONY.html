@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  
+      let amar = {
+        skills :"singer",
+        amarskills:function(){
+
+console.log(`amar skills is ${this.skills}`)
+    }
+      }
+
+   
+    let akhbar ={
+        skills :"chef",
+
+        akhbarskills:function(){
+
+console.log(`akhbar skills is ${this.skills}`)
+    }
+    }
+    let anthony ={
+        skills:"magician",
+        anthonySkills:function(){
+
+console.log(`Anthony skills is ${this.skills}`)
+},
+    }
+
+    amar.amarskills.call(akhbar)
+    akhbar.akhbarskills.call(anthony)
+    anthony.anthonySkills.call(amar)
+</script>
