@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      h1{
+         text-align: center;
+      }
+   </style>
+</head>
+<body>
+   <h1>Amazon Admin Panel</h1>
+   <form >
+      <label for="">Product Name</label>
+      <input type="text" id="name">
+      <label for="">Category</label>
+      <input type="text" id="category">
+      <label for="">Image url</label>
+      <input type="url" id="image">
+      <label for="">Price</label>
+      <input type="number" id="price">
+      <label for="">Gender</label>
+      <select id="gender">
+         <option value="">Choose</option>
+         <option value="Male">M</option>
+         <option value="Female">F</option>
+      </select>
+      <label for="">Sold</label>
+      <input type="checkbox" id="sold">
+<input type="submit" id="add">
+   </form>
+   
+</body>
+</html>
+<script>
+  
+let storeArr=JSON.parse(localStorage.getItem("product"))||[];
+let form=document.querySelector("form");
+form.addEventListener("submit",myfun)
+ function myfun(event){
+   event.preventDefault();
+   let prdName=document.getElementById("name").value;
+    let cata=document.querySelector("#category").value;
+   let img=document.querySelector("#image").value;
+   let price=document.getElementById("price").value;
+   let Gender=document.getElementById("gender").value;
+   let sold=form.sold.checked;
+   
+console.log(sold)
+  let product1=new ecommerce(prdName,cata,img,price,Gender,sold)
+   // console.log(storeArr)
+   storeArr.push(product1);
+
+  localStorage.setItem("product",JSON.stringify(storeArr))
+  alert("item saved")
+
+ }
+ function ecommerce(name,Category,img,price,Gender,sold){
+   this.name=name;
+   this.Category=Category;
+   this.img=img;
+   this.price=price;
+   this.Gender=Gender;
+   this.sold=sold;
+
+ }
+
+ 
+
+</script>
