@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "tweet": "Hello",
+      "gif": "https://media2.giphy.com/media/28GHfhGFWpFgsQB4wR/giphy.gif?cid=e9ac2e6c8ds9hx8gqqxlaqkd6v79pyef1dubtqd1awdnuk6l&rid=giphy.gif&ct=g",
+      "id": 1
+    },
+    {
+      "username": "John",
+      "tweet": "Hot Wheels",
+      "gif": "https://media3.giphy.com/media/B1CrvUCoMxhy8/giphy.gif?cid=e9ac2e6crwui2ceo4lijv4dyfefn1nmivqrhpfotwjpi581a&rid=giphy.gif&ct=g",
+      "id": 2
+    }
+  ]
+}
