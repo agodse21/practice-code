@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>check console</h1>
+  </body>
+</html>
+<script>
+  ///object.create
+
+  let FourWheeler = {
+    brand: "Tata",
+    Fuel:"disel",
+    TransmissionType:"Automatic",
+    
+  };
+// milage,kmps
+//  type: "Luxury","SVU,"Sedan","van","hatchback","minvan",
+// Airbags:4,
+// enginetype
+    let car1 = Object.create(FourWheeler);
+    car1.model = "Harrier";
+    car1.type="SVU";
+    car1.Airbags=4;
+    car1.enginetype="Turbocharged Engine";
+    car1.Mileage="17kmpl";
+    console.log("car1:",FourWheeler,car1)
+
+    
+    let car2 = Object.create(FourWheeler);
+    car2.model = "Nexon";
+    car2.type="SVU";
+    car2.Airbags=4;
+    car2.enginetype="Turbocharged Engine";
+    car2.Mileage="20kmpl";
+    console.log("car2:",FourWheeler,car2);
+
+
+    let car3 = Object.create(FourWheeler);
+    car3.model = "Safari";
+    car3.type="SVU";
+    car3.Airbags=6;
+    car3.enginetype="cylinder diesel Engine";
+    car3.Mileage="14kmpl";
+    console.log("car3:",FourWheeler,car3)
+
+    let car4 = Object.create(FourWheeler);
+    car4.model = "Altroz";
+    car4.type="Sedan";
+    car4.Airbags=4;
+    car4.enginetype="Turbocharged Engine";
+    car4.Mileage="22kmpl";
+    console.log("car4:",FourWheeler,car4)
+
+</script>
