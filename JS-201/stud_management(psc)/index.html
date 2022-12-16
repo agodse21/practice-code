@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student management system</title>
+    <style>
+        #nav{
+            width: 100%;
+            height: 100px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            display: flex;
+        }
+        #nav>div{
+            /* padding: 20px; */
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        form{
+            width: 30%;
+            margin: auto;
+           
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px;
+        }
+        form input,label{
+            width: 80%;
+            height: 40px;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        #submit{
+            width: 82%; 
+            cursor: pointer;
+        }
+        #show_dash{
+            margin-top: 40px;
+            margin-left: 40px;
+            padding: 15px 40px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: orangered;
+            color: white;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="nav"></div>
+  <a href="dashboard.html"> <button id="show_dash">Dashboard</button></a>
+
+   <h1>student management system</h1>
+   <form>
+   <label >Fill Your all details</label>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="course" placeholder="Course">
+    <input type="number" id="unit" placeholder="Unit">
+    <input type="text" id="image" placeholder="Image Link" >
+    <input type="number" id="batch" placeholder="batch">
+    <input type="submit" id="submit">
+   </form> 
+</body>
+</html>
+<script src="index.js">
+
+</script>

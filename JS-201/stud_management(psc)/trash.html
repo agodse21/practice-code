@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          h1 {
+        text-transform: uppercase;
+        text-align: center;
+      }
+      table {
+        width: 80%;
+        margin: auto;
+      }
+      table thead tr {
+        text-align: center;
+        background-color: blue;
+        height: 50px;
+        color: white;
+        font-size: 25px;
+      }
+      table tbody tr{
+        text-align: center;
+        background-color: rgb(164, 164, 217);
+        height: 50px;
+        color: white;
+        font-size: 25px;
+      }
+      table tbody tr:nth-child(even){
+        background-color: rgb(29, 63, 214);
+      }
+      table tbody tr td>img{
+        width: 30%;
+      }
+      #btn_stu{
+        padding: 15px 40px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: orangered;
+            color: white;
+            font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+  <a href="index.html"><button id="btn_stu">Add New Student</button></a>
+    <h1>Trash</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Course</td>
+          <td>Unit</td>
+          <td>Image</td>
+          <td>Batch</td>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <!-- append -->
+      </tbody>
+    </table>
+</body>
+</html>
+<script>
+   let trashArr = JSON.parse(localStorage.getItem("trash"));
+   trashArr.map(function (ele,index) {
+    let tr = document.createElement("tr");
+    let td=document.createElement("td");
+    td.innerText=ele.name;
+    let td1=document.createElement("td");
+    td1.innerText=ele.course;
+    let td2=document.createElement("td");
+    td2.innerText=ele.unit;
+    let td3=document.createElement("td");
+    let img=document.createElement("img");
+    img.setAttribute("src",ele.image);
+    td3.append(img);
+    let td4=document.createElement("td");
+    td4.innerText=ele.batch;
+    tr.append(td,td1,td2,td3,td4);
+    document.getElementById("tbody").append(tr)
+    
+  });
+
+</script>
