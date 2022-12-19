@@ -1,0 +1,59 @@
+#nav{
+    border: 2px solid black;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: right;
+}
+#nav>div{
+    width: 40%;
+    font-size: 20px;
+    font-weight: bold;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+justify-content: space-around;
+}
+#nav>div>a>div{
+    /* width: 50%; */
+   
+    cursor: pointer;
+}
+#nav a{
+    width: 30%;
+    height: auto;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+form{
+    width: 30%;
+    margin: auto;
+    margin-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 10px;
+}
+form label{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    
+    margin-bottom: 10px;
+}
+form input{
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+margin-bottom: 20px;
+border-radius: 5px;
+}
+form #login_btn{
+    width: 82%;
+    background-color: teal;
+    border: none;
+    cursor: pointer;
+    color: white;
+}

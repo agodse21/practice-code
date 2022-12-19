@@ -1,0 +1,80 @@
+#nav{
+    border: 2px solid black;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: right;
+}
+#nav>div{
+    width: 40%;
+    font-size: 20px;
+    font-weight: bold;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+justify-content: space-around;
+}
+#nav>div>a>div{
+    /* width: 50%; */
+   
+    cursor: pointer;
+}
+#nav a{
+    width: 30%;
+    height: auto;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+#head{
+    text-align: center;
+    text-transform: uppercase;
+}
+#slideshow{
+    width: 100%;
+    height: 800px;
+    
+}
+#slideshow>img{
+    width: 90%;
+    height:70%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#movies{
+    width: 90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+}
+#movies>div{
+    padding: 20px;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+#movies>div>img{
+    width: 100%;
+}
+#rat{
+    font-size: 18px;
+    font-weight: bold;
+}
+#sort-buttons{
+width: 90%;
+margin: auto;
+margin-top: -80px;
+margin-bottom: 20px;
+}
+#sort-buttons>button{
+    margin-right: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+border-radius: 5px;
+    padding: 15px 20px;
+}
