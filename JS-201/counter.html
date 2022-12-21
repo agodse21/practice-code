@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>counter</h1>
+    <h2 id="count"></h2>
+    <!-- <button id="btn">stop</button> -->
+    <input type="text" id="text" placeholder="enter name">
+</body>
+</html>
+<script>
+   /*  i want limit till counter 
+    if(count==59){
+clearInterval();
+    }
+    */
+   
+let name="Amol";
+
+    function counter(){
+        let count=0;
+        let text=document.getElementById("text");
+
+      let x=  setInterval( function(){
+        if(text.value==name){
+            alert("bha bhai waa");
+            clearInterval(x);
+        }
+        if(count==10){
+            text.disabled=true;
+            alert("har gaya tu re")
+        clearInterval(x);
+        }
+                let h=document.getElementById("count")
+                h.innerText=count;
+                count++;
+            }
+        , 1000)
+        
+    }
+    counter()
+
+//     document.getElementById("btn").addEventListener("click",stopcount);
+//     function stopcount(x){
+// clearInterval(x)
+//     }
+//     stopcount(x)
+</script>
