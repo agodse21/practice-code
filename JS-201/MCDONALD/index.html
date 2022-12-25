@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIRTUAL MCDONALD's</title>
+    <style>
+      body {
+        background-image: url();
+      }
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+      h2 {
+        text-align: center;
+        color: orange;
+      }
+      form {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        justify-content: space-around;
+      }
+      /* #main input{
+            display:block;
+           
+        }*/
+
+      .check_label {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      .check_label > input {
+        width: 20px;
+        height: 20px;
+      }
+      #place_order_btn {
+        /* width: 50%; */
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 10px 40px;
+        background-color: orange;
+        color: white;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      #display {
+        width: 90%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+        padding: 30px;
+        /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+      }
+      #all_food {
+        width: 100%;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      #all_food > div {
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* display: flex;
+  justify-content: center;
+  align-items: center; */
+      }
+      #all_food > div > img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      #display > p {
+        text-align: right;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #display > img {
+        display: block;
+        margin: auto;
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome To Amul's MCDONALD</h1>
+
+    <hr />
+    <h2>Hey User!! Choose What Food You Want</h2>
+    <div id="main">
+      <form>
+        <label class="check_label">
+          <input type="checkbox" class="item" id="Big_Mac" value="Big Mac" />
+          Big Mac</label
+        >
+        <label class="check_label">
+          <input
+            type="checkbox"
+            class="item"
+            id="Chicken_McNuggets"
+            value="Chicken McNuggets"
+          />
+          Chicken McNuggets</label
+        >
+        <label class="check_label">
+          <input
+            type="checkbox"
+            class="item"
+            id="Iced_Coffee"
+            value="Iced Coffee"
+          />
+          Iced Coffee</label
+        >
+        <label class="check_label">
+          <input
+            type="checkbox"
+            class="item"
+            id="Egg_McMuffin"
+            value="Egg McMuffin"
+          />
+          Egg McMuffin</label
+        >
+        <label class="check_label">
+          <input
+            type="checkbox"
+            class="item"
+            id="Apple_Slices"
+            value="Apple Slices"
+          />
+          Apple Slices</label
+        >
+      </form>
+      <button id="place_order_btn">Order Now</button>
+    </div>
+    <hr />
+    <div id="display">
+      <p id="Token"></p>
+      <h2 id="ready">Your Order is Preparing...</h2>
+      <img
+        src="https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg"
+        id="img_s"
+        alt=""
+      />
+      <div id="all_food"></div>
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>
