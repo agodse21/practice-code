@@ -6,9 +6,16 @@ const timeLogger = (res, req, next) => {
   const startTime = new Date().getTime();
   next();
   const endTime = new Date().getTime();
-  console.log(endTime - startTime);
+  console.log(startTime,endTime - startTime);
 };
 app.use(timeLogger);
+const timeLogger2 = (res, req, next) => {
+  const startTime = new Date().getTime();
+  next();
+  const endTime = new Date().getTime();
+  console.log(endTime - startTime);
+};
+app.use(timeLogger2);
 app.get("/", (req, res) => {
   const data = fs.readFileSync("./db.json", "utf-8");
   let parsed_data = JSON.parse(data);
