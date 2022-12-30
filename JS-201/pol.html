@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="a-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Poly</title>
+  </head>
+  <body>
+    <script>
+      Array.prototype.myforEach = function () {
+        let l = this.length;
+        let arr = this;
+        for (let i = 0; i < l; i++) {
+          console.log(arr[i]);
+        }
+      };
+      Array.prototype.myMap = function (tb) {
+        newArray = [];
+        length = this.length;
+        let arr = this;
+        for (let i = 0; i < length; i++) {
+          let a = tb(arr[i]);
+          newArray.push(a);
+        }
+        return newArray;
+      };
+
+      Array.prototype.myFilter = function (tb) {
+        newArray = [];
+        length = this.length;
+        let arr = this;
+        for (let i = 0; i < length; i++) {
+          let a = tb(arr[i]);
+          if (a) {
+            newArray.push(a);
+          }
+        }
+        return newArray;
+      };
+
+      Array.prototype.myReduce = function (rd) {
+        let bag = 0;
+        length = this.length;
+        let arr = this;
+        for (let i = 0; i < length; i++) {
+          let a = rd(arr[i]);
+          bag += a;
+        }
+        return bag;
+      };
+    </script>
+  </body>
+</html>
