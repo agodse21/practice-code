@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   check console 
+</body>
+</html>
+<script>
+// start myMap
+    let arr=[1,2,3,4];
+    Array.prototype.myMap=function(fun){
+        let newArr=[]
+        for(let i=0;i<this.length;i++){
+           let a= fun(this[i])
+           newArr.push(a)
+          
+        }
+return newArr;
+    }
+   let x=arr.myMap(function(x){
+        return x+2;
+
+    }) 
+    // console.log(x)
+
+    // end myMap
+ 
+
+    // start myForEach
+    Array.prototype.myForEach=function(fun){
+      
+        for(let i=0;i<this.length;i++){
+           let a= fun(this[i])
+        //    console.log(a)
+          
+        }
+
+    }
+    let y=arr.myForEach(function(x){
+        return x;
+    });
+    // end myForEach
+    
+
+    // start myFilter
+
+    Array.prototype.myFilter=function(fun){
+        let newArr=[]
+      for(let i=0;i<this.length;i++){
+         let a= fun(this[i])
+        if(a==this[i]){
+            newArr.push(a)
+         }
+        //  console.log(a)
+      }
+      return newArr;
+  }
+  let a=arr.myFilter(function(x){
+      if(x==3){
+return x
+      } 
+  });
+//   console.log(a)
+
+ // end  myFilter
+    
+ //start myReduce
+
+ Array.prototype.myReduce=function(fun){
+  let c;
+      for(let i=0;i<this.length;i++){
+       
+       c=fun(this[i]) 
+  
+      }
+      return c; 
+  }
+  let p=0;
+  let b=arr.myReduce(function(x){
+   
+    return p=p+x;
+  });
+  console.log(b)
+ 
+ //end myReduce
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+</script>
