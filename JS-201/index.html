@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        input{
+            width: 500px;
+            height: 50px;
+        }
+      #movie {
+        width: 505px;
+        height: 500px;
+        overflow: scroll;
+        border: 1px solid black;
+      }
+      .movie{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    
+      }
+      .movie img{
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      oninput="debounce(main,1000)"
+      type="text"
+      name=""
+      id="query"
+      placeholder="search"
+    />
+    <div id="movie"></div>
+  </body>
+</html>
+<script>
+  async function main() {
+    let search = document.getElementById("query").value;
+   let data= await getdata(search);
+    append(data);
+  }
+
+ // async makes a function return a Promise.
+ // await makes a function wait for a Promise.
+
+
+  async function getdata(search) {
+    const url = `https://www.omdbapi.com/?apikey=a1d311fe&s=${search}`;
+
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+    return data.Search;
+  }
+
+  function append(data){
+    if(!data){
+        return;
+    }
+    let container=document.getElementById("movie");
+   container.innerHTML="";
+    data.forEach(function(ele){
+        let img=document.createElement("img");
+        img.src=ele.Poster;
+
+        let title=document.createElement("p");
+        title.innerText=ele.Title;
+
+        let div=document.createElement("div");
+        div.setAttribute("class","movie")
+        div.append(img,title);
+        container.append(div)
+    })
+  }
+// for set time
+let id;
+  function debounce(func,delay){
+    if(id){
+        clearTimeout(id)
+    }
+id = setTimeout(function(){
+    func();
+},delay)
+  }
+</script>
