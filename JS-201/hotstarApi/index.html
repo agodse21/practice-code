@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOTSTAR</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="nav">
+      <div id="first_div">
+        <div id="menu_icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <img
+            src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
+            alt=""
+          />
+        </div>
+        <div>TV</div>
+        <div>MOVIES</div>
+        <div>
+          <img
+            src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-kids.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="second_div">
+        <div>
+          <input
+            oninput="debounce(main,1000)"
+            type="text"
+            id="search"
+            placeholder="search"
+          />
+          <div id="movie"></div>
+        </div>
+
+        <div>LOGIN</div>
+      </div>
+    </div>
+    <div id="slideshow"></div>
+    <div id="show_searched_movies"></div>
+    <h2 id="h2_trending">Trending/Popular Movies</h2>
+    <div id="top_rated_movie"></div>
+  </body>
+</html>
+<script src="index.js"></script>
