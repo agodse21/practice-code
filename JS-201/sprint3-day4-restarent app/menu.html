@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="./style/index.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="filter_sec">
+      <select class="btn_f" id="sort">
+        <option value="">Sort Product by price</option>
+        <option value="asc">Asending</option>
+        <option value="desc">Asending</option>
+      </select>
+      <select class="btn_f" id="fil_price">
+        <option value="">Filter Price</option>
+        <option value="two">Price<200</option>
+        <option value="fourt">Price<400</option>
+      </select>
+      <select class="btn_f" id="fil_rat">
+        <option value="">Filter By Rating</option>
+        <option value="three">Grater than 3</option>
+        <option value="four">Grater than 4</option>
+      </select>
+      
+    </div>
+    <div id="display"></div>
+  </body>
+</html>
+<script src="./script/menu.js" type="module"></script>

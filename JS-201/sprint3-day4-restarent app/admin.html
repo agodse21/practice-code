@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="div_section">
+        <form id="add_product">
+          <label>Add Product</label>
+          <input type="number" id="id" placeholder="Enter Your Product id" />
+          <input type="text" id="title" placeholder="Enter Your Product Title" />
+          <input
+            type="number"
+            id="price"
+            placeholder="Enter Your Product Price"
+          />
+          <input
+            type="text"
+            id="desc"
+            placeholder="Enter Your Product Description"
+          />
+          <input
+            type="text"
+            id="rat"
+            placeholder="Enter Your Product rating"
+          />
+          <input
+            type="text"
+            id="img"
+            placeholder="Enter Your Product Image URL"
+          />
+          <input type="submit" class="submit" value="Add Product" />
+        </form>
+  
+        <form id="delete_product">
+          <label>Delete Product</label>
+          <input type="text" id="id1" placeholder="Enter Your Product id" />
+  
+          <input type="submit" class="submit" value="Delete Product" />
+        </form>
+
+
+        <form id="update_product">
+          <label>Update Product</label>
+          <input type="number" id="id2" placeholder="Enter Your Product id" />
+          <input type="text" id="title2" placeholder="Enter Your Product Title" />
+          <input
+            type="number"
+            id="price2"
+            placeholder="Enter Your Product Price"
+          />
+          <input
+            type="text"
+            id="desc2"
+            placeholder="Enter Your Product Description"
+          />
+          <input
+            type="text"
+            id="rat2"
+            placeholder="Enter Your Product rating"
+          />
+          <input
+            type="text"
+            id="img2"
+            placeholder="Enter Your Product Image URL"
+          />
+          <input type="submit" class="submit" value="Updade Product" />
+        </form>
+
+
+      </div>
+</body>
+</html>
+<script src="./script/admin.js" type="module"></script>

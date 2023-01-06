@@ -1,0 +1,166 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+   background-position: center;
+   background-repeat: no-repeat;
+
+     
+}
+body{
+/* height: 700px; */
+ background-image: linear-gradient(to bottom,#7c1034,#ad2a56);
+}
+#logo{
+    margin-left: 50px;
+    width: 50%;
+}
+#logo>a{
+color: white;
+font-size: 45px;
+font-weight: bold;
+text-decoration: none;
+
+}
+span{
+color: white;
+margin-top: 30px;
+margin-left: 8px;
+}
+#navbar{
+    display: flex;
+    border-bottom: 2px solid white;
+    
+}
+#navbar>div{
+    
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+}
+#section{
+    width: 40%;
+    font-size: 22px;
+    gap: 50px;
+    
+   justify-content: flex-end;
+}
+#section>h3>a{
+    color: white;
+    text-decoration: none;
+}
+
+/* sign up and log in form */
+
+form{
+    width: 30%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px;
+    border-radius:10px;
+    margin-bottom: 300px;
+}
+form label{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+form input{
+    width: 95%;
+    height: 40px;
+    display: block;
+    margin: auto;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.submit{
+    background-color: #7c1034;
+    color: white;
+    width: 98%;
+    border: none;
+    cursor: pointer;
+    /* margin-top: 10px; */
+}
+form>p{
+    text-align: center;
+    font-size: 20px;
+}
+form>p>a{
+    margin-left: 10px;
+    font-weight: bold;
+}
+#display{
+  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+#display>div{
+    /* margin: auto; */
+display: flex;
+background-color: white;
+border: 1px solid black;
+gap: 20px;
+padding: 10px;
+border-radius: 7px;
+align-items: center;
+
+}
+#display>div>img{
+    width: 400px;
+    height: 350px;
+    border-radius: 7px;
+}
+/* #display>div>div{
+    justify-content:center ;
+} */
+
+button{
+    /* display: block; */
+    background-color: #7c1034;
+    border: none;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 20px;
+    color: white;
+}
+
+
+button:hover{
+    background-color: #ad2a56;
+}
+#admin_btn{
+    background-color: white;
+    border: none;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 20px;
+    color: black;
+}
+
+
+#div_section{
+    display: flex;
+    height: auto;
+}
+.btn_f{
+    width: 150px;
+    background-color: white;
+    color:#7c1034;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+}

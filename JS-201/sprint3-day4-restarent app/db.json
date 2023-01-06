@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "title": "Meal for 4",
+      "price": 1040,
+      "description": "Indi Tandoori Paneer & Peppy Paneer Combo Med Indi Tandoori Paneer + Peppy Paneer + 2 Garlic Bread +2 Pepsi",
+      "ratings": 4.5,
+      "image": "https://images.dominos.co.in/4623-CMB1210.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Peppy Paneer",
+      "price": 405,
+      "description": "Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika ",
+      "ratings": 4.5,
+      "image": "https://images.dominos.co.in/new_peppy_paneer.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Veg Pulav",
+      "price": 120,
+      "description": "Veg Pulav Best quality  ",
+      "ratings": 3.5,
+      "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/rjksyji6dmp9ogysnbge"
+    },
+    {
+      "id": 7,
+      "title": "Veg Biryani",
+      "price": 260,
+      "description": "Veg Biryani,Dum biryani with dum",
+      "ratings": 4,
+      "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/rjksyji6dmp9ogysnbge"
+    }
+  ]
+}
