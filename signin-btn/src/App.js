@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import Cam from "./cam";
 
 function App() {
   const [name, setName] = useState("");
@@ -9,15 +10,10 @@ function App() {
       <input placeholder="name" onChange={(e) => setName(e.target.value)} />
       <input placeholder="pass" onChange={(e) => setPass(e.target.value)} />
       <br />
-      <button
-       className={
-          name == "" || pass == ""
-            ? "oky"
-            : "ohky"
-        }
-      >
+      <button className={name == "" || pass == "" ? "oky" : "ohky"}>
         submit
       </button>
+      <Cam />
     </div>
   );
 }
