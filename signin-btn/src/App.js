@@ -10,10 +10,10 @@ function App() {
       <input placeholder="pass" onChange={(e) => setPass(e.target.value)} />
       <br />
       <button
-        style={
+       className={
           name == "" || pass == ""
-            ? { background: "red" }
-            : { background: "yellow"}
+            ? "oky"
+            : "ohky"
         }
       >
         submit

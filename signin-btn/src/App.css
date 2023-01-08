@@ -6,7 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.oky{
+  background-color: red;
+}
+.oky:hover{
+  margin-right: 200px;
+}
+.ohky{
+  background-color: yellow;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
