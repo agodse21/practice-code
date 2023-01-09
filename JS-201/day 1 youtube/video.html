@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="video.css" />
+  </head>
+  <body onload="playvid()">
+    <div id="nav">
+      <div id="logo">
+        <div>
+          <img src="https://img.icons8.com/ios/344/menu--v1.png" alt="" />
+        </div>
+
+        <div>
+          <a href="./index.html">
+            <img
+              src="https://www.logo.wine/a/logo/YouTube/YouTube-Logo.wine.svg"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+      <div id="search_box">
+        <input type="text" id="query" placeholder="Search" />
+        <div id="search_icon" onclick="search()">
+          <img
+            src="https://seekicon.com/free-icon-download/search_8.svg"
+            alt=""
+          />
+        </div>
+        <!-- <button >Search</button> -->
+      </div>
+      <img
+        id="mic"
+        src="https://img.icons8.com/material-sharp/344/microphone--v1.png"
+        alt=""
+      />
+      <div id="account_sec">
+        <img
+          src="https://previews.123rf.com/images/martialred/martialred1810/martialred181000014/113393140-add-new-video-or-upload-movie-create-media-line-art-vector-icon-for-apps-and-websites.jpg"
+          alt=""
+        />
+
+        <img src="https://img.icons8.com/ios-filled/344/grid.png" alt="" />
+        <img src="https://img.icons8.com/material-sharp/344/bell.png" alt="" />
+        <img
+          src="https://img.icons8.com/ios-filled/344/user-male-circle.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div id="main_section">
+      <div id="main">
+        <iframe
+          width="100%"
+          height="500"
+          id="playvid"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <h3 id="title"></h3>
+        <div id="like_ele">
+          <p id="like"></p>
+          <p id="date"></p>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/633/633991.png"
+            alt=""
+          />
+          <p id="like_no"></p>
+          
+          <img
+            id="dislike"
+            src="https://cdn-icons-png.flaticon.com/512/633/633758.png"
+            alt=""
+          />
+          <p id="dislike_no"></p>
+          <img
+            id="share"
+            src="https://img.icons8.com/material-sharp/2x/share.png"
+            alt=""
+          />
+          <p>SHARE</p>
+          <img id="playlist" src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/344/external-playlist-music-royyan-wijaya-detailed-outline-royyan-wijaya.png" alt="">
+          <p>SAVE</p>
+          <img id="dot_icon" src="https://img.icons8.com/ios-filled/72/dots-loading--v1.gif" alt="">
+        </div>
+        <hr />
+        <p id="description"></p>
+      </div>
+      <hr />
+      <div id="section2"></div>
+    </div>
+  </body>
+</html>
+<script src="video.js"></script>
