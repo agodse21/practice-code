@@ -1,0 +1,19 @@
+{
+  "name": "day2-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tax_calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "babel-jest": "^28.1.3"
+  }
+}
