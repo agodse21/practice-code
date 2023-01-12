@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOM ARRAY </title>
+</head>
+
+<body>
+    <h1 >CUSTOM ARRAY -SEE IN CONSOLE</h1>
+</body>
+
+</html>
+
+<script>
+
+    // ------------------------------------- CUSTOM ARRAY -----------------------------------------
+
+    class array {
+        constructor() {
+            this.length = 0;
+            this.array = [];
+        }
+        // 1. Custom Push array -----------------
+        
+        push(...arr) {
+        
+
+           console.log("Example Of Push Method", arr);
+
+            // 2.Custom forEach array -----------------------
+            arr.forEach((el) => {
+
+                let index = this.length;
+                this.array[index] = el;
+
+                this.length++;
+
+                console.log("Example Of ForEach Method : ", el);
+                
+            });
+
+            // console.log("forEach method : ", foreached);
+
+            // 3.Custom map array  -----------------------
+            let mapped = arr.map((el) => {
+                let index = this.length;
+                this.array[index] = el;
+                // console.log(el)
+                this.length++;
+
+                return el * 2;
+            });
+
+            console.log("Map Custom array : ", mapped);
+
+            // 4. Custom reduce array -----------------------
+            let reduced = arr.reduce((acc, el) => {
+                let index = this.length;
+                this.array[index] = el;
+
+                this.length++;
+
+                return acc + el;
+            });
+
+            console.log("Reduced custom array: ", reduced);
+
+            // 5.Custom fiter array-----------------------
+            let filtered = arr.filter((el) => {
+                let index = this.length;
+                this.array[index] = el;
+
+                this.length++;
+
+                return el % 2
+            });
+
+            console.log("Filter Custom Array : ", filtered);
+
+        }
+
+        // 6. Custom remove array----------------
+        remove() {
+            let index = this.length - 1;
+
+            // Remove the last index from the array
+            delete this.array[index];
+            this.array.length--;
+            this.length--;
+        }
+    }
+    let s1 = new array();
+
+    s1.push(1, 2, 3, 4, 5, 6, 7, 8);
+
+    s1.remove();
+
+    // console.log("Custom Method : ", s1);
+</script>
