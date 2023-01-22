@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to right,
+          rgb(0, 157, 255),
+          rgb(255, 255, 255)
+        );
+      }
+      form {
+        background-color: white;
+        width: 25%;
+        margin: auto;
+        /* border: 1px solid red; */
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+      }
+
+      form input {
+        width: 90%;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      #login_btn {
+        background-color: teal;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>Log In</label>
+      <input type="email" id="email" placeholder="Enter Your Email" />
+      <input type="password" id="password" placeholder="Enter Password" />
+      <input type="submit" id="login_btn" />
+    </form>
+  </body>
+</html>
+<script>
+  // let stud = JSON.parse(localStorage.getItem("admin-signup"))
+  let login = (eve) => {
+    eve.preventDefault();
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    if (email == "" || pass == "") {
+      alert("Please fill All Details");
+    } else {
+
+let logArr=[];
+
+      let stud = JSON.parse(localStorage.getItem("signup"));
+      let flag = false;
+      stud.map((el) => {
+        class user {
+          password;
+          constructor(n, id,type) {
+            this.name = n;
+            this.id = id;
+            this.type=type;
+          }
+
+          signup(email, password) {
+            this.email = email;
+            this.password = password;
+          }
+
+          login(email, pass) {
+            if (email == this.email && pass == this.password) {
+              flag = true;
+             logArr.push(this);
+             localStorage.setItem("logdata",JSON.stringify(logArr));
+            } 
+          }
+        }
+       
+
+        let s1 = new user(el.name, el.id,el.type);
+        s1.signup(el.email, el.password);
+        s1.login(email, pass);
+        //mapfunction
+      });
+      if(flag==true){
+          alert("logged in sucessfully!!");
+          window.location.href="./main.html";
+        }else{
+          alert("login failed");
+        }
+    }
+  };
+
+  let form = document.querySelector("form");
+  form.addEventListener("submit", login);
+</script>
+<!-- C:\Users\Asus\Desktop\masai\js 201\sprit 3\day 3\student_manegement\main.html -->

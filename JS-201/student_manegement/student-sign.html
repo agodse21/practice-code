@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to right,
+          rgb(0, 157, 255),
+          rgb(255, 255, 255)
+        );
+      }
+      form {
+        background-color: white;
+        width: 25%;
+        margin: auto;
+        /* border: 1px solid red; */
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+      }
+
+      form input {
+        width: 90%;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      #signup_btn {
+        background-color: teal;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      a {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>Sign Up</label>
+      <input type="text" id="name" placeholder="Enter Your Name" />
+
+      <input type="number" id="id" placeholder="Enter Your Id" />
+      <input type="email" id="email" placeholder="Enter Your Email" />
+      <input type="password" id="password" placeholder="Enter Password" />
+
+      <input type="submit" id="signup_btn" />
+
+      <a href="student-log.html">Already have a Account?Log in</a>
+    </form>
+  </body>
+</html>
+<script>
+  let signup = (eve) => {
+    eve.preventDefault();
+    let name = document.getElementById("name").value;
+    let id = document.getElementById("id").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    if (name == "" || id == "" || email == "" || pass == "") {
+      alert("Please fill All Details");
+    } else {
+      let stud = JSON.parse(localStorage.getItem("signup")) || [];
+      let flag = false;
+      let usertype = "";
+      stud.map((el) => {
+        if (email == el.email && id == el.id) {
+          flag = true;
+          usertype = el.type;
+        }
+      });
+
+      if (flag == true) {
+        alert(`Your already A user as ${usertype}!!`);
+        window.location.href = "./student-log.html";
+      } else {
+        class user {
+          password;
+          constructor(n, id, type) {
+            this.name = n;
+            this.id = id;
+            this.type = type;
+          }
+          signup(email, password) {
+            // validation of username & pass As per rules
+            let isvalidated = false;
+
+            //   validation usrname & validation of pass methods
+
+            isvalidated =
+              this.#validateemail(email) && this.#validatepass(password);
+
+            if (isvalidated) {
+              this.email = email;
+              this.password = password;
+              alert("User Registered successfully");
+              stud.push(this);
+              localStorage.setItem("signup", JSON.stringify(stud));
+              window.location.href = "./student-log.html";
+            } else {
+              alert("please follow username and password rules");
+            }
+          }
+          #validateemail(email) {
+            return true;
+          }
+
+          #validatepass(password) {
+            return true;
+          }
+        }
+        let type = "student";
+        let s1 = new user(name, id, type);
+
+        s1.signup(email, pass);
+
+        console.log(s1);
+      }
+    }
+  };
+  let form = document.querySelector("form");
+  form.addEventListener("submit", signup);
+</script>
