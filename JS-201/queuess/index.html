@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOM QUEUE</title>
+</head>
+
+<body>
+    <h1>CUSTOM QUEUE-SEE IN CONSOLE</h1>
+</body>
+
+</html>
+
+<script>
+
+    // ------------------------------------- CUSTOM QUEUE -----------------------------------------
+
+    class Queue {
+        constructor() {
+            this.elements = [];
+            this.head = 0;
+            this.tail = 0;
+        }
+        enQueue(element) {
+            this.elements[this.tail] = element;
+            this.tail++;
+
+            this.elements.push(element);
+        }
+        dequeue() {
+            const item = this.elements[this.head];
+            delete this.elements[this.head];
+            this.head++;
+            return item;
+        }
+        peek() {
+            return this.elements[this.head];
+        }
+        get length() {
+            return this.tail - this.head;
+        }
+        get isEmpty() {
+            return this.length === 0;
+        }
+
+        // front function
+        front() {
+            return this.elements[0];
+        }
+
+    }
+
+    let q = new Queue();
+
+    console.log(q.elements);
+
+    // 2. enQueue() - to push element at back
+    q.enQueue(1);
+    q.enQueue(2);
+    q.enQueue(3);
+    q.enQueue(4);
+    q.enQueue(5);
+    q.enQueue(6);
+    q.enQueue(7);
+    q.enQueue(8);
+    q.enQueue(9);
+
+    // 4. enQueueThree() - to push three element at back in one go
+
+    q.enQueue(10);
+    q.enQueue(11);
+    q.enQueue(12);
+
+    // 1. Legth------------------
+    console.log("Length of the queue is : " + q.length);
+
+    // 3. deQueue() - to remove element from front
+    console.log("Front element is : " + q.dequeue());
+
+    // 6. deQueueThree() - to remove three element from front
+    console.log("Front element is 1st : " + q.dequeue());
+    console.log("Front element is 2nd : " + q.dequeue());
+    console.log("Front element is 3rd : " + q.dequeue());
+</script>
