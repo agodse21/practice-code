@@ -6,6 +6,8 @@ require("dotenv").config();
 const cors = require("cors");
 const { TaskRouter } = require("./routes/task.route");
 const { TaskController } = require("./controllers/task.controller");
+const { UserController } = require("./controllers/User.controller");
+const { SaveTempUser } = require("./middleware/TempUser");
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
 app.use(express.json());
@@ -20,53 +22,19 @@ app.use("/task", TaskRouter);
 
 bot.startWebhook("/webhook", null, 5000);
 
-// Handle the OAuth callback
-bot.command("oauth_callback", (ctx) => {
-  // Verify the request signature
-  if (
-    !telegraf.utils.verifyRequestSignature(ctx.request, process.env.BOT_TOKEN)
-  ) {
-    ctx.throw(401, "Unauthorized");
-  }
-
-  console.log(ctx);
-  // Extract the authorization code from the query parameters
-  const code = ctx.update.query.code;
-
-  // Use the authorization code to request an access token
-  axios
-    .post(
-      "https://api.telegram.org/bot" +
-        process.env.BOT_TOKEN +
-        "/getAccessToken",
-      { code: code }
-    )
-    .then((response) => {
-      //Validate the access token
-      axios
-        .get(
-          "https://api.telegram.org/bot" + process.env.BOT_TOKEN + "/getUser",
-          { token: response.access_token }
-        )
-        .then((userInfo) => {
-          // Store the access token and user's information in a database or session
-          ctx.session.access_token = response.access_token;
-          ctx.session.user = userInfo;
-          ctx.reply("Authentication successful!");
-        });
-    })
-    .catch((error) => {
-      ctx.reply("An error occured during the authentication process: " + error);
-    });
-});
-
 bot.command("start", (ctx) => {
   ctx.reply("Welcome! Please use the /user command to authenticate.");
 });
-
+//flamecloud_denoBot  5860527655:AAGz8lS_yAApBhroEWdtasra5-eS2onMJ7c
+// AmolTetrisBot 5807067744:AAFzDVnPcc05ivogyE9QMHAemnF7kBzek3s
 bot.command("user", (ctx) => {
   if (ctx.message) {
-    ctx.reply(`Hello ${ctx.message.from.first_name}! Your Telegram user ID is ${ctx.message.from.id}.You can try for /add task in trello board or /remove task from trello board 
+    let user = {
+      name: ctx.message.from.first_name,
+      telgram_user_id: ctx.message.from.id,
+    };
+    ctx.reply(UserController.LoginUsingTelegram(user));
+    ctx.reply(`Hello ${ctx.message.from.first_name}! Your Telegram user ID is ${ctx.message.from.id}.You can try for /add task in trello board or /remove task from trello board , you want to see your all task /getmytask or you can visit Trell board /open_my_trello_board
         `);
   } else {
     ctx.reply(
@@ -77,31 +45,68 @@ bot.command("user", (ctx) => {
 
 bot.command("add", (ctx) => {
   ctx.reply(
-    `Thank you! please provide your task in below format. for ex: "addTask_taskTitle_taskDescription_status"`
+    `Thank you! please provide your task in below format. for ex: "addTask_taskTitle_taskDescription_status(pending,doing,done)"`
   );
 });
+bot.command("getmytask", async (ctx) => {
+  const user_id = ctx.message.from.id;
+  let data = await TaskController.GetTaskTelegram(user_id);
+
+  // console.log(data)
+
+  ctx.reply(`Thank you! Here list of you added task on Trello board`);
+  if (data.length == 0) {
+    ctx.reply("Your Task list is empty! you can Add Task using /add");
+  } else {
+    data.map((ele, index) => {
+      ctx.reply(
+        `Task Title: ${ele.task_title}, Task Description: ${ele.task_description}`
+      );
+    });
+  }
+});
 bot.command("remove", (ctx) => {
-    ctx.reply(
-      `Thank you! please provide your task id in below format. for ex: "remove_TaskId:123"`
-    );
-  });
+  ctx.reply(
+    `Thank you! please provide your task id in below format. for ex: "remove_TaskId:123"`
+  );
+});
+bot.command("open_my_trello_board", (ctx) => {
+  // SaveTempUser(ctx.message.from.id);
+
+  bot.telegram.sendMessage(
+    ctx.from.id,
+    `Please follow this link: <a href="${process.env.LOCALHOST}/${ctx.message.from.id}">${process.env.LOCALHOST}</a>`,
+    { parse_mode: "HTML" }
+  );
+});
+
 bot.use(async (ctx) => {
   if (ctx.message.text.includes("addTask")) {
     const taskArr = ctx.message.text.split("_");
+
     const task_title = taskArr[1];
     const task_description = taskArr[2];
     const status = taskArr[3];
-    ctx.reply(TaskController.AddTaskFromTelegram({task_title,task_description,status}))
-  }else if(ctx.message.text.includes("remove_TaskId")){
-    const TaskId=ctx.message.text.split(":");
-    ctx.reply(TaskController.RemoveTaskFromTelegram(TaskId))
-  }
-  else{
-    ctx.reply("Please Provide correct command!")
+    const user_id = ctx.message.from.id;
+
+    ctx.reply(
+      TaskController.AddTaskFromTelegram({
+        task_title,
+        task_description,
+        status,
+        user_id,
+      })
+    );
+  } else if (ctx.message.text.includes("remove_TaskId")) {
+    const TaskId = ctx.message.text.split(":");
+    const user_id = ctx.message.from.id;
+    // console.log(TaskId);
+    ctx.reply(TaskController.RemoveTaskFromTelegram(user_id, TaskId[1]));
+  } else {
+    ctx.reply("Please Provide correct command!");
   }
 });
 
-  
 bot.launch();
 app.listen(PORT, async () => {
   try {
