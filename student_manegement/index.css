@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+}
+#head{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: teal;
+    text-decoration: underline;
+}
+#btn{
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+
+}
+#btn>button{
+    display: block;
+    margin: auto;
+    width: 30%;
+    padding: 20px;
+    color:white;
+    background-color: teal;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 25px;
+    border: none;
+}
+#btn>button:hover{
+    background-color: orangered;
+}

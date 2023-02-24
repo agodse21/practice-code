@@ -1,0 +1,150 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3 id="title">Welcome user</h3>
+    <hr />
+
+    <div id="btn_div"></div>
+    <div id="display"></div>
+    <!-- <table>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Id</td>
+      <td>Email</td>
+    </tr>
+  </tbody>
+</table> -->
+  </body>
+</html>
+<script>
+  let logArr = JSON.parse(localStorage.getItem("logdata")) || [];
+  let stud = JSON.parse(localStorage.getItem("signup")) || [];
+
+  class user {
+    constructor(n, id, type) {
+      this.name = n;
+      this.id = id;
+      this.type = type;
+    }
+  }
+
+  class student extends user {
+    constructor(name, id, type) {
+      // borrow properties from user
+      super(name, id, type);
+      this.Numberofassignment = 0;
+    }
+    studentAssignment() {
+      this.Numberofassignment++;
+    }
+  }
+
+  class admin extends student {
+    constructor(name, id, type) {
+      super(name, id, type);
+    }
+    removeStudent(id) {
+      //remove object from aaraay
+
+      stud = stud.filter((el) => {
+        return el.id !== id;
+      });
+    }
+  }
+  logArr.map((ele) => {
+    if (ele.type == "admin") {
+      let title = document.getElementById("title");
+      title.innerText = `Welcome ${ele.type} `;
+
+      // let main = document.getElementById("main");
+      // main.innerHTML = "";
+      let btn_div = document.getElementById("btn_div");
+      let show_list = document.createElement("button");
+      show_list.innerText = "see users or remove users";
+      show_list.addEventListener(
+        "click",
+        (Function = () => {
+          greet(ele);
+        })
+      );
+
+      let greet = (ele) => {
+        let display = document.getElementById("display");
+        display.innerHTML = "";
+        let table = document.createElement("table");
+
+        let thead = document.createElement("thead");
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = "name";
+        let td2 = document.createElement("td");
+        td2.innerText = "email";
+        let td3 = document.createElement("td");
+        td3.innerText = "id";
+        let tbody = document.createElement("tbody");
+        stud.map((Element) => {
+          let tr = document.createElement("tr");
+          let td1 = document.createElement("td");
+          td1.innerText = Element.name;
+          let td2 = document.createElement("td");
+          td2.innerText = Element.email;
+          let td3 = document.createElement("td");
+          td3.innerText = Element.id;
+          let td4 = document.createElement("td");
+          td4.innerText = "remove";
+          td4.addEventListener(
+            "click",
+            (Function = () => {
+              remove(Element);
+            })
+          );
+          tr.append(td1, td2, td3, td4);
+          tbody.append(tr);
+        });
+
+        let remove = (element) => {
+          alert("yes");
+        };
+
+        tr.append(td1, td2, td3);
+        thead.append(tr);
+        table.append(thead, tbody);
+        display.append(table);
+      };
+
+      let lecture = document.createElement("button");
+      lecture.innerText = "Create or remove lectures";
+
+      let assignment = document.createElement("button");
+      assignment.innerText = "show or remove assignment ";
+      btn_div.append(show_list, lecture, assignment);
+
+      let n = new admin(ele.name, ele.id, ele.type);
+      console.log(n);
+    } else if (ele.type == "student") {
+      let title = document.getElementById("title");
+      title.innerText = `Welcome ${ele.type} `;
+    }
+  });
+</script>
+
+<!-- // let form=document.createElement("form")
+
+// let input1=document.createElement("input");
+// input1.setAttribute("type","text")
+// input1.setAttribute(".placeholder","Ent")
+// form.append(input1);
+// display.append(form) -->
