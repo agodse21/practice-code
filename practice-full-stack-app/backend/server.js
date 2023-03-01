@@ -1,23 +1,29 @@
 const express = require("express");
 const cors = require("cors");
-const app = express();
 require("dotenv").config();
-const port = process.env.PORT || 9000;
 
+const { connection } = require("./config/db");
 
+const PORT = process.env.PORT || 5000;
+
+/* CONFIGURATIONS */
+const app = express();
+
+app.use(express.json());
 
 app.use(cors());
-app.use(express.json());
-app.use("/", (req, res) => {
+
+app.get("/", (req, res) => {
   res.send("Home");
 });
 
-
-app.listen(port, async () => {
+app.listen(PORT, async () => {
   try {
-    console.log(`listing on port ${port}`);
+    await connection;
+    console.log("Connected Succesfull to db");
   } catch (err) {
-    console.log("error form connection");
+    console.log("error from db");
     console.log(err);
   }
+  console.log(`listing on port ${PORT}`);
 });
