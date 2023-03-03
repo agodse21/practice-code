@@ -16,6 +16,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Home");
 });
+app.post("/post",()=>{
+  
+})
 
 app.listen(PORT, async () => {
   try {
