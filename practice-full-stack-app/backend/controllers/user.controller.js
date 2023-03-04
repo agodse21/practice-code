@@ -28,7 +28,10 @@ const SignUp = async (req, res) => {
     });
   }
 };
-const SignIn = async (req, res) => {};
+const SignIn = async (req, res) => {
+  const {email,password} =req.body;
+  
+};
 
 const userController = {
   SignIn,
