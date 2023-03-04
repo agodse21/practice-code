@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const { connection } = require("./config/db");
+const { userRouter } = require("./routes/user.route");
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,10 +17,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Home");
 });
-app.post("/post", (req, res) => {
-  const { data } = req.body;
-  console.log(data);
-});
+app.use("/",userRouter)
 
 app.listen(PORT, async () => {
   try {
