@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to right,
+          rgb(0, 157, 255),
+          rgb(255, 255, 255)
+        );
+      }
+      form {
+        background-color: white;
+        width: 25%;
+        margin: auto;
+        /* border: 1px solid red; */
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+      }
+
+      form input {
+        width: 90%;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      #signup_btn {
+        background-color: teal;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>Sign Up</label>
+      <input type="text" id="name" placeholder="Enter Your Name" />
+      <!-- <input type="number" id="mobile" placeholder="Enter Mobile No" /> -->
+      <input type="email" id="email" placeholder="Enter Your Email" />
+      <input type="password" id="password" placeholder="Enter Password" />
+
+      <input type="submit" id="signup_btn" />
+    </form>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>
+<script>
+ 
+let form=document.querySelector("form");
+form.addEventListener("submit",signup)
+let signup=((eve)=>{
+eve.preventDefault();
+alert("nskn")
+})
+
+
+let stud =JSON.parse(localStorage.getItem("signup"))||[];
+  class user {
+    #password;
+    constructor(n, id) {
+      this.name = n;
+      this.id = id;
+    }
+    signup(email, password) {
+      // validation of username & pass As per rules
+      let isvalidated = false;
+
+      //   validation usrname & validation of pass methods
+
+      isvalidated =
+        this.#validateemail(email) && this.#validatepass(password);
+
+      if (isvalidated) {
+        this.email = email;
+        this.#password = password;
+        console.log("user registerd successfully");
+
+        stud.push(this);
+        localStorage.setItem("signup",JSON.stringify(stud));
+      } else {
+        console.log("please follow username and password rules");
+      }
+    }
+    #validateemail(email) {
+      // checking for rules username
+
+      return true;
+    }
+    // encapsulation making data private
+    // #is use for encpsulation .it is making privete and only acceseble in under the main clas.it is not assceble out side of claass
+    #validatepass(password) {
+      // checking for pass
+      return true;
+    }
+  }
+
+
+
+  
+
+  let s1 = new user("amol", 1);
+
+
+  s1.signup("amol123", "1234");
+
+  console.log(s1);
+</script>
