@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payment</title>
+
+    <link rel="stylesheet" href="./styles/payment.css" />
+  </head>
+
+  <body>
+    <!-- main section****************************************************** -->
+    <div id="main">
+      <div>
+        <h2>Choose your payment method</h2>
+        <div id="box">
+          <div>
+            <div>
+              <img
+                src="https://images.bewakoof.com/web/bank-card-fill-1645697857.svg"
+                alt=""
+              />
+              <h3>Debit/Credit Card</h3>
+            </div>
+            <hr />
+            <div>
+              <img
+                src="https://images.bewakoof.com/web/Group-1645705428.png"
+                alt=""
+              />
+              <h3>Wallet</h3>
+            </div>
+            <hr />
+            <div>
+              <img
+                src="https://images.bewakoof.com/web/upi-icon-1645705429.png"
+                alt=""
+              />
+              <h3>UPI</h3>
+            </div>
+            <hr />
+            <div>
+              <img
+                src="https://images.bewakoof.com/web/upi-icon-1645705429.png"
+                alt=""
+              />
+              <h3>Cash On delivery</h3>
+            </div>
+            <hr />
+          </div>
+          <hr />
+          <div>
+            <div id="card_img">
+              <img
+                src="https://images.bewakoof.com/web/ic-visa-gray-payment-v1.jpg"
+                alt=""
+              />
+              <img
+                src="https://images.bewakoof.com/web/ic-master-card-payment-v1.jpg"
+                alt=""
+              />
+              <img
+                src="https://images.bewakoof.com/web/ic-rupay-payment-v1.jpg"
+                alt=""
+              />
+            </div>
+            <hr />
+            <form>
+              <label>CARD NUMBER</label>
+              <input
+                type="text/number"
+                maxlength="16"
+                id="cardnumber"
+                placeholder="Enter Card Number"
+              />
+              <label for="date">EXP DATE</label>
+              <input id="date" type="date" placeholder="valid till" />
+              <label for="cvv">CVV</label>
+              <input type="password" maxlength="4" id="cvv" placeholder="CVV" />
+              <label for="name">NAME</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter card holder name"
+              />
+              <input id="pay" type="submit" />
+              <!-- <button>PAY</button>   -->
+              <label id="hint">Hint:CN:1234567891234567 Pass:1234 </label>
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div id="show_details">
+        <p>Delevering Order To</p>
+        <h4 id="show_address">Add</h4>
+        <hr />
+        <h2>Price Summary</h2>
+        <hr />
+        <h4>Final Amount</h4>
+        <p id="showtotal">0</p>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let addArr = JSON.parse(localStorage.getItem("address"));
+  addArr.map(function (ele) {
+    console.log(addArr);
+    let address = (document.getElementById("show_address").innerText =
+      ele.name +
+      " " +
+      ele.mobile +
+      " " +
+      ele.city +
+      " " +
+      ele.state +
+      " - " +
+      ele.pincode);
+  });
+
+  document.querySelector("form").addEventListener("submit", checkcard);
+
+  let amout = JSON.parse(localStorage.getItem("pricestore"));
+  amout.map(function (el) {
+    document.querySelector("#showtotal").innerText = el.total;
+  });
+
+  let loadcard = JSON.parse(localStorage.getItem("savedcard"));
+  function checkcard(event) {
+    event.preventDefault();
+    let cardno = document.querySelector("#cardnumber").value;
+    let date = document.querySelector("#date").value;
+    let cvv = document.querySelector("#cvv").value;
+    let name = document.querySelector("#name").value;
+
+    if (cardno == "" || date == "" || cvv == "" || name == "") {
+      alert("Please Fill all Details");
+    } else {
+      loadcard.map(function (elem) {
+        if (elem.cardNo == cardno && elem.cvv == cvv) {
+          alert("OTP Send on your Mobile");
+          window.location.href = "otp_payment.html";
+        } else {
+          alert("Please enter All details Correctly");
+        }
+      });
+    }
+  }
+
+  let savedcard = [{ cardNo: 1234567891234567, date: 2025, cvv: 1234 }];
+  localStorage.setItem("savedcard", JSON.stringify(savedcard));
+
+  let Namearr = JSON.parse(localStorage.getItem("signUpData"));
+  Namearr.map(function (ele) {
+    document.getElementById("sign_btn").disabled = true;
+    document.getElementById("sign_btn").innerText = ele.name;
+  });
+</script>
