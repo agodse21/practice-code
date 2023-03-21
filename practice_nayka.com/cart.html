@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makeup Products</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/cart.css" />
+  </head>
+  <body>
+    <div id="topnav">
+      <div>
+        <h4>BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals</h4>
+      </div>
+      <div>
+        <div>
+          <img src="./Assests/phone-icon.png" alt="x" />
+          Get App
+        </div>
+        <div><img src="./Assests/location.png" alt="x" />Store & Events</div>
+        <div><img src="./Assests/gift.png" alt="gift" /> Gift Card</div>
+        <div><img src="./Assests/help.webp" alt="gift" /> Help</div>
+      </div>
+    </div>
+    <div id="middleNav">
+      <div><img id="logo" src="./Assests/nayka_logo.png" alt="" /></div>
+      <div>
+        <div>Categories</div>
+        <div>Brands</div>
+        <div>Luxe</div>
+        <div>Nayka Fashion</div>
+        <div>Beauty Advice</div>
+      </div>
+      <div id="serachBox">
+        <input placeholder="Search on Nayka" /><button>Search</button>
+      </div>
+      <button id="sign_btn">Sign in</button>
+      <img id="bag" src="./Assests/bag.png" alt="bag" />
+    </div>
+    <hr />
+    <div id="main">
+
+        <div id="cartitem">
+            <h1 id="head">My bag <span> <span  id="item">0</span>item</span></h1>
+            <div id="div1"><img src="https://images.bewakoof.com/web/Red-truck.png" alt="">
+                <p>Shop for ₹50 more to get FREE delivery!</p>
+            </div>
+
+        </div>
+        <div id="total">
+            <div id="save_label">
+                <p>Save extra ₹40 with TriBe >></p>
+            </div>
+            <div id="label">
+                <p id="promobtn">Click and Get upto Rs.200 cashback on orders above Rs.299 on Paytm Wallet and Paytm
+                    Postpaid >></p>
+            </div>
+            <div id="price_section">
+                <h1>PRICE SUMMARY</h1>
+                <hr>
+                <table>
+                    <thead>
+
+                        <td>Delivery Fee </td>
+                        <td>Free</td>
+                    </thead>
+                    <tbody>
+                        <td>Bag Discount </td>
+                        <td>30%</td>
+                    </tbody>
+                    <tbody>
+                        
+                        <td>Quantity</td>
+                        <td  id="quantity">0</td></tbody>
+                    </tbody>
+                    <tbody>
+                        <td>Total MRP (Incl. of taxes)</td>
+                        <td id="totalprice">0 </td>
+                       
+
+
+                </table>
+                <div id="saving_show"></div>
+                <hr>
+                <button id="placeorderbtn">ADD ADDRESS</button>
+               
+               
+
+            </div>
+        </div>
+
+
+    </div>
+  </body>
+</html>
+<script src="./script/cart.js">
+
+  
+      console.log(ele);
+      let div = document.createElement("div");
+      let img = document.createElement("img");
+      img.src = ele.image_link;
+      let brand = document.createElement("h2");
+      brand.textContent = ele.brand;
+      let name = document.createElement("h3");
+      name.textContent = ele.name;
+      let desc = document.createElement("p");
+      desc.textContent = ele.description;
+      let price = document.createElement("h2");
+      price.innerHTML = `&#8377; ${ele.price}`;
+      let buy = document.createElement("button");
+      buy.textContent = "BUY";
+      buy.addEventListener("click", function () {
+        cart.push(ele);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added in Cart!");
+      });
+      div.append(img, brand, name, desc, price, buy);
+      main.append(div);
+
+//   Append();
+</script>
