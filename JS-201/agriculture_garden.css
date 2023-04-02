@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#main{
+    width: 90%;
+    margin: auto;
+    font-family:sans-serif;
+}
+#topSection{
+    margin-top:30px ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(207, 206, 206);
+    border-bottom: 1px solid rgb(207, 206, 206);
+    padding: 10px;
+};
+#topMiddle{
+    width: 50%;
+    background-color: blue;
+    color: antiquewhite;
+border: 1px solid red;
+}
+#topSection>div>h1{
+/* color: rebeccapurple; */
+font-size:medium;
+}
