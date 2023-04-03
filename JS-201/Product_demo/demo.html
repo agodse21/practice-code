@@ -31,6 +31,36 @@
         height: 550px;
         background-repeat: no-repeat;
         background-position: center;
+        position: relative;
+      }
+      #slider > button:first-child {
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 9%;
+        background-color: transparent;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+        font-weight: 800;
+      }
+      #slider > button:last-child {
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        right: 9%;
+        background-color: transparent;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+        font-weight: 800;
+      }
+      button:hover{
+
       }
     </style>
   </head>
@@ -67,11 +97,11 @@
     }
     slider.innerHTML = "";
     slider.style.backgroundImage = `url('${ImgData[i].img}')`;
+    let backWordBtn = document.createElement("button");
+    backWordBtn.textContent = "<";
     let forWordBtn = document.createElement("button");
-    forWordBtn.textContent = "<";
-
-    let backWordBtn=document.createElement("button");
-    
+    forWordBtn.textContent = ">";
+    slider.append(backWordBtn, forWordBtn);
     i++;
   }, 3000);
 </script>
