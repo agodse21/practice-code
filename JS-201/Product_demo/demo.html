@@ -59,8 +59,8 @@
         font-size: 30px;
         font-weight: 800;
       }
-      button:hover{
-
+      #slider > button:hover {
+        background-color: rebeccapurple;
       }
     </style>
   </head>
@@ -95,10 +95,17 @@
     if (i == ImgData.length) {
       i = 0;
     }
+    console.log(i);
     slider.innerHTML = "";
     slider.style.backgroundImage = `url('${ImgData[i].img}')`;
     let backWordBtn = document.createElement("button");
     backWordBtn.textContent = "<";
+    backWordBtn.addEventListener("click", () => {
+      if (i <= 0) {
+      } else if (i !== ImgData.length) {
+        slider.style.backgroundImage = `url('${ImgData[i + 1].img}')`;
+      }
+    });
     let forWordBtn = document.createElement("button");
     forWordBtn.textContent = ">";
     slider.append(backWordBtn, forWordBtn);
