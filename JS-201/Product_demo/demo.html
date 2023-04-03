@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domo</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      nav {
+        background-color: black;
+        height: 70px;
+        margin: 0;
+      }
+      nav > div {
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+      nav > div > div > a {
+        text-decoration: none;
+        color: yellow;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <div>
+          <a href="#"><b>LOGO</b></a>
+        </div>
+        <div><a href="#">Login</a></div>
+      </div>
+    </nav>
+    <div id="slider"></div>
+  </body>
 </html>
