@@ -25,6 +25,13 @@
         color: yellow;
         font-size: 20px;
       }
+      #slider {
+        width: 100%;
+        margin-top: 20px;
+        height: 550px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     </style>
   </head>
   <body>
@@ -39,3 +46,32 @@
     <div id="slider"></div>
   </body>
 </html>
+<script>
+  let slider = document.getElementById("slider");
+  let ImgData = [
+    {
+      img: "https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp",
+    },
+    {
+      img: "https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp",
+    },
+    {
+      img: "https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp",
+    },
+  ];
+  let i = 0;
+  let id;
+  id = setInterval(() => {
+    if (i == ImgData.length) {
+      i = 0;
+    }
+    slider.innerHTML = "";
+    slider.style.backgroundImage = `url('${ImgData[i].img}')`;
+    let forWordBtn = document.createElement("button");
+    forWordBtn.textContent = "<";
+
+    let backWordBtn=document.createElement("button");
+    
+    i++;
+  }, 3000);
+</script>
