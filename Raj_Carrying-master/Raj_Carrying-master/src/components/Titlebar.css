@@ -1,0 +1,61 @@
+.titlebar {
+    background-color:#23293e;
+    height: var(--title-bar-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+.block {
+    display: block;
+  }
+
+.hidden{
+    display: none;
+  }
+  
+  .titlebar-container {
+    /* display: flex; */
+    /* flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; */
+    height: 80px;
+    width: 100%;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .titlebar-logo {
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .fa-typo3 {
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+  }
+  

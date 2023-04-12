@@ -1,0 +1,43 @@
+.vehicle-form-container {
+  /* margin: 100px 100px 100px 100px; */
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%); */
+  background-color: var(--nav-bg);
+  overflow-y: auto;
+  filter: var(--filter);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  /* width: 100%; */
+  /* border: var(--border); */
+  /* overflow: auto; */
+}
+
+
+.vehicle-form-container .form-input-content-block-0 {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.vehicle-form-container .form-field-top,
+.vehicle-form-container .form-field-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 220px;
+  width: 100%;
+  padding: 20px;
+}
+
+.vehicle-form-container .form-field-top {
+  border-bottom: 2px solid black;
+}
+
+
+.vehicle-form-container .form-row {
+  max-width: 50%;
+}

@@ -1,0 +1,174 @@
+.item-remove-btn{
+    background-color: darkgrey;
+    height: 20px;
+    width: 30px;
+    font-weight: bolder;
+    font-size: large;
+    border: 0px solid  white ;
+    border-radius: 4px;
+    color: #FFF;
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-edit-btn:hover{
+  transition: all 0.3s ease-out;
+  background-color: rgb(177, 174, 174);
+}
+
+.item-delete-btn:hover{
+  transition: all 0.3s ease-out;
+  background-color: rgb(177, 174, 174);
+}
+
+.item-deleteall-btn:hover{
+    /* padding: 6px 18px; */
+  transition: all 0.4s ease-out;
+  background-color: rgb(177, 174, 174);
+  /* color: rgb(177, 174, 174); */
+  /* border-radius: 4px; */
+  /* border: 1px solid var(--primary) rgb(10, 8, 8); */
+}
+
+
+
+.item-edit-btn{
+    /* background-color: rgb(151, 139, 139); */
+    height: 20px;
+    width: 42px;
+    font-weight: bolder;
+    box-shadow: 1px 1px 1px 1px;
+    font-size: small;
+    border: 1px solid  rgb(10, 8, 8) ;
+    border-radius: 4px;
+    color: rgb(15, 15, 15);
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-deleteall-btn{
+    /* background-color: rgb(151, 139, 139); */
+    height: 20px;
+    /* width: 60px; */
+    font-weight: bolder;
+    /* box-shadow: 1px 1px 1px 1px; */
+    font-size: small;
+    border: 1px solid  rgb(10, 8, 8) ;
+    border-radius: 4px;
+    color: rgb(15, 15, 15);
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-delete-btn{
+    /* background-color: rgb(151, 139, 139); */
+    height: 20px;
+    width: 55px;
+    font-weight: bolder;
+    box-shadow: 1px 1px 1px 1px;
+    font-size: small;
+    border: 1px solid  rgb(10, 8, 8) ;
+    border-radius: 4px;
+    color: rgb(15, 15, 15);
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item-remove-btn:hover,
+.item-remove-btn:focus{
+    background-color: #ad2924; 
+    color: white; 
+    /* border: var(--border); */
+}
+.item-add-btn{
+    background-color: darkgrey;
+    height: 20px;
+    width: 30px;
+    font-weight: bolder;
+    font-size: medium;
+    border: 0px solid  white ;
+    border-radius: 4px;
+    color: #FFF;
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.item-add-btn:hover,
+.item-add-btn:focus{
+    background-color: #4CAF50; 
+    color: white; 
+    /* border: var(--border); */
+}
+
+.dt-container table{
+    /* border-bottom: solid black 2px;
+    border-right: solid black 2px; */
+    padding-right: 5px;
+    padding-left: 5px;
+}
+tr {
+    height: 10px;
+    
+}
+
+.dt-container .table-header{
+    font-size: small;
+}
+
+.form-control-small-col {
+    width: 40px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
+}
+.form-control-medium-col {
+    width: 100px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
+}
+.form-control-medlarge-col {
+    width: 150px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
+}
+.form-control-large-col {
+    width: 200px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.dt-container .react-autosuggest__suggestions-container--open {
+    display: block;
+    position: absolute;
+    max-width: 250px;
+    min-width: 80px;
+    transform: translateY(2px);
+    /* top: 51px; */
+    /* width: 200px; */
+    border: 1px solid #aaa;
+    background-color: #fff;
+    /* font-family: Helvetica, sans-serif; */
+    font-weight: 300;
+    font-size: small;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+    align-items: left;
+    overflow-y: auto;
+    max-height: 200px;
+  }

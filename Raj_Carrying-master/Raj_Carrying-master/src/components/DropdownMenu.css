@@ -1,0 +1,83 @@
+
+.dropdown {
+  /* display: inline-block; */
+  position: absolute;
+  top: calc(var(--nav-size) );
+  /* width: px; */
+  transform: translateX(5%);
+  background-color: var(--nav-bg);
+  /* border: var(--border);
+  border-radius: var(--border-radius); */
+  padding: 0.2rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+  width: 125px;
+  font-size: 0.9em;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu-item {
+  height: 20px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  /* border-radius: var(--border-radius); */
+  transition: background var(--speed);
+  padding: 0.5rem;
+  /* padding: 100px; */
+  font-size: unset;
+}
+
+.menu-item .icon-button {
+  margin-right: 0.5rem;
+}
+
+
+.menu-item:hover * {
+  background-color: #525357;
+}
+
+.menu-item:hover {
+  background-color: #525357;
+}
+
+.icon-right {
+  margin-left: auto;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+  
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-secondary-exit {
+
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}

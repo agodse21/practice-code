@@ -1,0 +1,163 @@
+/* @media print {
+  thead {
+    display: table-header-group;
+  }
+  tfoot {
+    display: table-footer-group;
+    position: fixed;
+    bottom: 0;
+  }
+} */
+
+#table-div {
+  display: grid;
+  grid-template-columns: 10px auto 150px 150px 100px auto auto auto auto auto auto auto auto;
+  /* border-collapse: collapse; */
+  text-align: center;
+  column-gap: 10px;
+  /* width: 100%; */
+  /* font-size: 70%; */
+  row-gap: 12px;
+  margin-right: 16px;
+  /* margin-left: 1px; */
+  /* justify-content: ; */
+}
+
+/* #head {
+  overflow: hidden;
+  white-space: normal;
+} */
+
+#grand_total {
+  white-space: nowrap;
+  font-weight: bolder;
+  align-content: center;
+}
+
+#total_package {
+  white-space: nowrap;
+  font-weight: bolder;
+  grid-column-start: 7;
+  grid-column-end: 8;
+}
+
+#total_weight {
+  white-space: nowrap;
+  font-weight: bolder;
+  grid-column-start: 8;
+  /* grid-column-end: 13; */
+}
+
+#total_to_pay {
+  white-space: nowrap;
+  font-weight: bolder;
+  /* grid-column-start: 8; */
+  /* grid-column-end: 13; */
+}
+
+#total_paid {
+  white-space: nowrap;
+  font-weight: bolder;
+  /* grid-column-start: 8; */
+  /* grid-column-end: 13; */
+}
+
+#total_eb {
+  white-space: nowrap;
+  font-weight: bolder;
+  grid-column-start: 13;
+  /* grid-column-end: 13; */
+}
+
+#footer_data {
+  border: 0px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+
+#ex1 {
+  border: 0px;
+  border-top: 1px;
+  border-style: dotted;
+  margin-bottom: -5px;
+  margin-top: 10px;
+  grid-column-start: 1;
+  grid-column-end: 14;
+  
+  background-color: blueviolet;
+}
+
+/* #ex {
+  grid-column-start: auto;
+  grid-column-end: 12;
+} */
+
+#consignor_name {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#consignee_name {
+  overflow: hidden;
+  white-space: nowrap
+}
+
+/* #content {
+  overflow: hidden;
+  white-space: nowrap;
+} */
+
+/* #bilty_no {
+  grid-area: content;
+}
+
+#consignee_name {
+  grid-area: content;
+}
+
+#consignor_name {
+  grid-area: content;
+}
+
+#content {
+  grid-area: content;
+}
+
+#private_marka_no {
+  grid-area: content;
+}
+
+#no_of_package {
+  grid-area: content;
+}
+
+#charge_weight {
+  grid-area: content;
+}
+
+#to_pay {
+  grid-area: content;
+}
+
+#paid {
+  grid-area: content;
+}
+
+#tbb {
+  grid-area: content;
+}
+
+#destination_name {
+  grid-area: content;
+} */
+
+/* #bilty_no {
+  grid-area: content;
+} */
+#none_display {
+  display: none;
+}
+
+/* table tfoot {
+  display: table-row-group;
+} */

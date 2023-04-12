@@ -1,0 +1,61 @@
+.form-bilty-ack {
+    display: flex;
+  flex-direction: column;
+  /* margin: 10px 10px 10px 10px; */
+  background-color: var(--form-bg);
+  /* filter: var(--filter); */
+  border-radius: var(--border-radius);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.form-bilty-ack .form-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.form-bilty-ack .form-label{
+    min-width: 70px;
+  margin-bottom: 6px;
+  font-family: roboto;
+  font-size: small;
+  font-weight: bold;
+}
+
+.form-bilty-ack .form-input{
+    border-radius: 2px;
+  height: 20px;
+  width: 50%;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  font-family: roboto;
+  margin-bottom: 10px;
+  /* z-index: 1000 !important; */
+  border: var(--border);
+  text-transform: uppercase;
+
+}
+
+.bilty-ack-form-container {
+  /* margin: 100px 100px 100px 100px; */
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%); */
+  background-color: var(--nav-bg);
+  overflow-y: auto;
+  filter: var(--filter);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  /* width: 100%; */
+  /* border: var(--border); */
+  /* overflow: auto; */
+}

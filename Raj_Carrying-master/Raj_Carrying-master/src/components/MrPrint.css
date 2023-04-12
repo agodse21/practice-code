@@ -1,0 +1,191 @@
+@page {
+  size: A4;
+}
+:root {
+  --lines: 0 !important;
+}
+
+#MR {
+  display: grid;
+  grid-template-columns: 9.9cm 9.9cm;
+  column-gap: 1.1cm;
+  /* margin-left: -0.2cm; */
+  margin-top: 0.1cm;
+  /* margin-right: 0.7cm; */
+  margin-bottom: 0.6cm;
+  border-style: var(--lines);
+  border: 10px;
+}
+#mr_accounts_copy {
+  height: 13cm;
+  border-style: var(--lines);
+  /* display: grid; */
+}
+
+#mr_details {
+  font-size: 80%;
+  margin-top: 1.7cm;
+  display: grid;
+  border: 0px;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  height: 1.3cm;
+  grid-template-columns: 6.5cm 3.2cm;
+}
+
+#mr_party_name {
+  border: 0px;
+  margin-top: 0.4cm;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  margin-left: 2.5cm;
+  height: 0.3cm;
+  border-style: var(--lines);
+}
+
+#mr_no {
+  border: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  margin-left: 1.5cm;
+  margin-top: 0.4cm;
+  height: 0.3cm;
+  border-style: var(--lines);
+}
+
+#mr_address {
+  border: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  margin-left: 2.3cm;
+  height: 0.3cm;
+  border-style: var(--lines);
+}
+
+#mr_date {
+  font-size: 70%;
+  border: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  margin-left: 1.5cm;
+  /* margin-top: -0.12cm; */
+  margin-bottom: 0.15cm;
+  overflow: visible;
+  height: 0.3cm;
+  border-style: var(--lines);
+}
+
+#mr_type {
+  border: 0px;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: var(--lines);
+  margin-left: 1.5cm;
+  /* margin-top: 0.0000001cm; */
+  height: 0.3cm;
+  border-style: var(--lines);
+  grid-column-start: 2;
+}
+
+#mr_row2 {
+  margin-top: 1.1cm;
+  border: 1px;
+  border-style: var(--lines);
+  height: 2.7cm;
+  margin-left: -0.05cm;
+  text-align: center;
+  display: grid !important;
+  grid-template-columns: 0.78cm 1.7cm 1.7cm 0.8cm 1.6cm 1.2cm 1.8cm;
+  font-size: 60% !important;
+  column-gap: 2px;
+  /* background-color: blue; */
+  /* row-gap: 1cm; */
+}
+
+#mr_booking_station {
+  margin-left: 0.5cm;
+  font-size: 70%;
+  border-style: var(--lines);
+}
+
+#mr_booking_station2 {
+  /* margin-left: 0.5cm; */
+  font-size: 70%;
+  border-style: var(--lines);
+}
+#mr_row3 {
+  border-style: var(--lines);
+  height: 6.2cm;
+  display: flex;
+  margin-top: -1.4cm;
+  /* grid-template-columns: auto auto; */
+}
+
+#mr_col1 {
+  font-size: 70%;
+  display: grid !important;
+  row-gap: 0.3cm;
+  border-style: var(--lines);
+  margin-left: 2.5cm;
+  margin-top: 0.4cm;
+  width: 5cm;
+}
+
+#mr_col2 {
+  font-size: 70%;
+  /* display: grid !important; */
+  /* row-gap: 0.3cm; */
+  margin-top: 0.8cm;
+  border-style: var(--lines);
+  margin-left: 1.5cm;
+  border-style: var(--lines);
+  width: 2cm;
+}
+
+#mr_cht {
+  margin-top: 0.1cm;
+}
+
+#mr_ex_cht {
+  margin-top: 0.45cm;
+}
+
+#mr_gt_cht {
+  margin-top: 1cm;
+}
+
+#mr_refund_amount {
+  margin-left: -1.2cm;
+  margin-top: 0.5cm;
+  /* font-weight: bolder; */
+}
+
+#mr_rupee {
+  margin-left: -1.5cm;
+}
+#mr_row4 {
+  margin-top: 1cm;
+  margin-left: 5cm;
+}
+#mr_party_copy {
+  height: 13cm;
+  border-style: var(--lines);
+  border-color: yellowgreen;
+}
+
+@media print {
+  /* @page {
+    size: 14cm 21.5cm !important;
+    size: landscape !important;
+  } */
+}

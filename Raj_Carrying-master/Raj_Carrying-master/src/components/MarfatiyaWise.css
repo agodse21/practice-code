@@ -1,0 +1,44 @@
+.form-marfatiya-wise {
+    display: flex;
+  flex-direction: column;
+  /* margin: 10px 10px 10px 10px; */
+  background-color: var(--form-bg);
+  /* filter: var(--filter); */
+  border-radius: var(--border-radius);
+  box-shadow: 0 -2px 10px rgb(241, 239, 239);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  /* height: 50vh; */
+  min-height: 70vh;
+}
+
+.form-marfatiya-wise .form-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.form-marfatiya-wise .form-label{
+    min-width: 70px;
+  margin-bottom: 6px;
+  font-family: roboto;
+  font-size: small;
+  font-weight: bold;
+}
+
+.form-marfatiya-wise .form-input{
+    border-radius: 2px;
+  height: 20px;
+  width: 50%;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  font-family: roboto;
+  margin-bottom: 10px;
+  /* z-index: 1000 !important; */
+  border: var(--border);
+  text-transform: uppercase;
+
+}

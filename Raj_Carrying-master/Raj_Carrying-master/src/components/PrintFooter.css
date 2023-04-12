@@ -1,0 +1,38 @@
+#drivers_row_div {
+  padding-top: 8px;
+}
+
+#rcc_label {
+  margin-left: 40%;
+  font-weight: bolder;
+}
+
+#signature_print_div {
+  border: 0px;
+  margin-top: 30px;
+  padding-top: 8px;
+  margin-bottom: 30px;
+}
+
+#print_label {
+  margin-left: 30%;
+}
+
+#dispatch_label {
+  margin-left: 30%;
+}
+
+#signature_print_details_div {
+  margin-bottom: 10px;
+}
+
+#main_footer {
+  /* position: absolute; */
+  bottom: 0;
+  margin-top: 10px;
+
+  width: 100%;
+}
+#main_footer {
+  break-inside: avoid;
+}

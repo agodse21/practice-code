@@ -1,0 +1,15 @@
+diff --git a/node_modules/print-js/dist/print.js b/node_modules/print-js/dist/print.js
+index 2d54952..7ac8efc 100644
+--- a/node_modules/print-js/dist/print.js
++++ b/node_modules/print-js/dist/print.js
+@@ -255,9 +255,8 @@ function cleanUp(params) {
+     params.onPrintDialogClose(); // Remove iframe from the DOM
+ 
+     var iframe = document.getElementById(params.frameId);
+-
+     if (iframe) {
+-      iframe.remove();
++      setTimeout(()=>{iframe.remove()},10000);
+     }
+   };
+ 

@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  background: #151616;
+  font-family: roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* uncomment to stop scrolling */
+  /* overflow: hidden;  */
+  /* letter-spacing: 0.05em; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+:root {
+  --bg: rgb(214, 216, 213);
+  --nav-bg:  #313233;
+  /* --bg:#b0c2f3;
+  --nav-bg: #2C3A47; */
+   /* #0e2566; */
+
+  /* --form-bg: #d3deff; */
+  --form-bg: var(--bg);
+  --bg-accent: #bdc9db;
+  --text-color: #dadce1;
+  --nav-size: 50px;
+  --border: 1px solid #474a4d;
+  --border-radius: 5px;
+  --speed: 500ms; 
+  --title-bar-size: 40px;
+  --filter: drop-shadow(2px 2px 5px rgb(92, 76, 76));
+  --box-shadow: "0 10px 30px #BBB";
+  --button-size: calc(var(--nav-size) * 0.5);
+  
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;;
+}
+
+
+/* Icon Button */
+.icon-button {
+  min-width: 10px;
+  width: 14%;
+  /* height: calc(var(--nav-size)*0.8); */
+  height: 100%;
+  background-color: var(--nav-bg);
+  /* border-radius: 5%; */
+  /* padding: 5px; */
+  /* margin: 2px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition: filter 300ms; */
+}
+
+.icon-button svg { 
+  /* fill: var(--text-color); */
+  width: 100%;
+  height: 100%;
+}
+
+
+.home{
+  background-image: url("assets/images/truck.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: var(--bg);
+  height: 100vh;
+  width: 100vw;
+  /* overflow-y:initial; */
+  /* overflow: hidden; */
+}
+
+.page-marfatiya-wise,
+.page-inward,
+.page-products,
+.page-mr,
+.page-vehicle,
+.page-challan,
+.page-trip,
+.page-bilty,
+.page-bilty-ack{
+  background-color: var(--bg);
+  /* margin: 0px 0px 0px 0px; */
+  padding: 10px;
+  /* height: 100%;
+  width: 100%; */
+  overflow-y: auto;
+  height: 100vh;
+}

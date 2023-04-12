@@ -1,0 +1,82 @@
+#party-belongs-label {
+  z-index: 100;
+  background-color: #d6d8d5;
+}
+
+#break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+#party-belongs-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#party-belongs-radio {
+  margin-top: -2%;
+  padding: 5%;
+  border-style: solid;
+}
+
+#party-belongs-to-branch-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+#party-belongs-to-branch-label {
+  z-index: 100;
+  background-color: #d6d8d5;
+}
+
+#party-belongs-to-branch-check {
+  margin-top: -2%;
+  width: 100%;
+  padding: 5%;
+  border-style: solid;
+  /* overflow: auto; */
+}
+
+#branch-name-div {
+  /* max-height: 100px; */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-height: 400px;
+}
+
+#party-belongs-checkbox {
+  margin-top: 10px;
+}
+
+.challan-form-container .table-container-2{
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: flex-start;
+  padding: 10px;
+  border: solid black 2px;
+  margin: 10px;
+  background-color: rgba(236, 238, 236, 0.884);
+  overflow-y: scroll;
+  max-height: 200px;
+  overflow-x: scroll;
+}
+
+.form-field-left-1 {
+  /* grid-column: 1 / 1; */
+  /* border: solid rgb(226, 14, 14); */
+  display: flex;
+  flex-direction: column;
+  border-width: 0 10px;
+  justify-content: flex-start;
+  align-items: right;
+  width: 50%;
+  padding: 10px 0 0 10px;
+  border-right: solid black 2px;
+  /* border-left: solid black 2px; */
+}

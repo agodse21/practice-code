@@ -1,0 +1,57 @@
+{
+  "name": "navbar-dropdown-v1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "lodash": "^4.17.21",
+    "match-sorter": "^6.3.0",
+    "namor": "^2.0.2",
+    "num-to-words": "^0.2.1",
+    "num-words": "^1.2.2",
+    "print-js": "^1.6.0",
+    "react": "^16.13.1",
+    "react-autosuggest": "^10.1.0",
+    "react-datepicker": "^3.6.0",
+    "react-dom": "^16.13.1",
+    "react-html-table-to-excel": "^2.0.0",
+    "react-loading-overlay": "^1.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-table": "^7.6.3",
+    "react-to-print": "^2.12.3",
+    "react-transition-group": "^4.3.0",
+    "reactjs-popup": "^2.0.4",
+    "sass": "^1.54.3",
+    "screenfull": "^5.1.0",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "postinstall": "npx patch-package"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
