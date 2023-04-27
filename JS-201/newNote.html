@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta value="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notify App</title>
+    <link rel="stylesheet" href="./Styles/newNote.css" />
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" id="home">
+          <h1>Notify 📝</h1>
+        </a>
+      </div>
+      <div>
+        <div>
+          <h3>
+            <span>Total Notes:</span>
+            <span id="total_notes">
+              <!-- add no. of  notes here -->
+            </span>
+          </h3>
+        </div>
+        <div>
+          <a href="newNote.html" id="new_note">
+            <h3>New Note+</h3>
+          </a>
+        </div>
+
+        <div>
+          <a href="deleted.html">
+            <h3>Deleted</h3>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="newNote_container">
+      <h1>Add new Note</h1>
+      <!-- add input box and textarea here -->
+      <p>Title</p>
+      <input type="text" value id="new_title" placeholder="add title" />
+      <p>description</p>
+      <textarea
+        type="text"
+        value
+        id="new_description"
+        placeholder="new_description"
+      ></textarea>
+
+      <button id="add_note">Add note</button>
+
+      <!-- add submit button here -->
+    </div>
+  </body>
+  <script src="./Scripts/newNote.js"></script>
+</html>
