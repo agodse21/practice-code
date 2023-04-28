@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notify App</title>
+  <link rel="stylesheet" href="./Styles/deleted.css">
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="index.html" id="home">
+        <h1>Notify 📝</h1>
+      </a>
+    </div>
+    <div>
+      <div>
+
+        <input id="Search" type="text" placeholder="Search something...">
+        <button id="search_btn">Search
+
+        </button>
+      </div>
+      <div>
+        <h3><span>Total Notes:</span>
+          <span id="total_notes">
+            <!-- add no. of deleted notes here -->
+          </span>
+        </h3>
+      </div>
+      <div>
+        <a href="newNote.html" id="new_note">
+          <h3>New Note+</h3>
+        </a>
+      </div>
+
+      <div><a href="deleted.html">
+          <h3>Deleted</h3>
+        </a></div>
+    </div>
+  </nav>
+
+  <div id="notes_container">
+    <!-- append deleted notes in this div -->
+  </div>
+</body>
+<script src="./Scripts/deleted.js"></script>
+
+</html>
