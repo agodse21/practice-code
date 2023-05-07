@@ -1,0 +1,623 @@
+#navbar{
+    background-color: #71BDD5;
+    /* height: 00px; */
+}
+#nav_details{
+  
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+   
+}
+#nav_desc{
+    
+    width: 30%;
+    /* text-align: center; */
+}
+#responsie_all_link{
+    display: none;
+}
+#nav_desc>h1{
+    color: white;
+}
+#nav_desc>p{
+text-align: justify;
+line-height: 25px;
+}
+#nav_img{
+    margin-left: 60px;
+    margin-top: 40px;
+}
+#nav_img>img{
+    width: 90%;
+   border-radius: 12px;
+}
+.nav{
+
+    width: 100%;
+    height: 60px;
+   display: flex;
+   align-items: center;
+      /* padding-left: 40px;
+      padding-right: 80px; */
+      background-color:#368BC1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    } 
+
+    .nav>div{
+        justify-content:space-between;
+        align-items: center;
+        display: flex;  
+        width: 80%;
+        margin: auto;
+    }
+    #logo>h1:hover{
+      color: white;
+    }
+    #logo>h1{
+     font-size: 21px;
+     font-family: Arial, Helvetica, sans-serif;
+     
+    }
+    #logo>img{
+      width: 30%;
+      border-radius: 50%;
+      height: 50px;
+    }
+    #logo{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 12%;
+    height: 60px;
+  
+    }
+    .all_link{
+     
+      display: flex;  
+      justify-content:space-between;
+      align-items: center;
+      
+      width: 44%;
+      height: 40px;
+     
+    }
+    .all_link>a{
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* color: black; */
+        font-weight: 600;
+      color: white;
+      }
+      .all_link>div{
+       
+        width: 20%;
+        height: 40px;
+      }
+      .all_link>div>img{
+        width: 100%;
+      }
+      .all_link>a:hover{
+       text-decoration: underline;
+       color: black;
+      }
+    
+    
+      .login_Container{
+      
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 16%;
+        height: 40px;
+      
+        }
+        .log_in:hover{
+          background-color: royalblue;
+          color: red;
+        }
+        .log_in{
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80px;
+          height: 30px;
+          color: blue;
+          background-color:lavender;
+          border-radius: 50px;
+        }
+        .sign_up:hover{
+          background-color: whitesmoke;
+          color: black;
+        }
+        .sign_up{
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 90px;
+          height: 30px;
+          color: white;
+          background-color:blue;
+          border-radius: 50px;
+        }
+
+
+
+
+
+
+
+
+
+
+#admision_criteria{
+    margin-top: 100px;
+    /* height: 500px; */
+    background-color: #E9F4F8;
+    padding: 20px;
+}
+#admission_title{
+    text-align: center;
+
+
+}
+#admision_criteria>p{
+    text-align: justify;
+    width: 38%;
+    margin: auto;
+    line-height: 20px; 
+}
+
+#admission_school{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    
+    
+
+}
+.admission_card{
+    background-color:#71BDD5 ;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+
+}
+.admission_card>p{
+    line-height: 20px;
+}
+.admission_per{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+#underline{
+    background-color: black;
+    height: 1px;
+    border: none;
+    width: 80%;
+    margin: auto;
+}
+#pictures_section{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 80px;
+    gap: 20px;
+}
+#pictures_section>img{
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    border-radius: 20px;
+}
+#apply_section{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    justify-content: space-between;
+    gap: 50px;
+}
+#apply_section>img{
+    width: 50%;
+    border-radius: 20px;
+}
+#apply_section{
+    text-align: center;
+}
+#apply_section>div>p{
+    width: 80%;
+    margin: auto;
+}
+#register-btn{
+    background-color: #71BDD5;
+   margin-top: 30px;
+   border: none;
+   padding:10px 20px;
+font-weight: bold;
+font-size: larger;
+border-radius: 10px;
+}
+#school_opn{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+#school_opn>div{
+    text-align: center;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+#school_opn>div>div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+#school_opn>div>div>img{
+    width: 20%;
+}
+
+#waiting{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 150px;
+    justify-content: space-between;
+    gap: 50px;
+}
+#waiting>img{
+    width: 50%;
+    border-radius: 20px;
+}
+#waiting{
+    text-align: center;
+}
+#waiting>div>p{
+    width: 80%;
+    margin: auto;
+}
+#view-btn{
+    background-color: #71BDD5;
+   margin-top: 30px;
+   border: none;
+   padding:10px 20px;
+font-weight: bold;
+font-size: larger;
+border-radius: 10px;
+}
+
+#community{
+    background-color: #CCCCCC;
+    text-align: center;
+    margin-top:100px ;
+    padding: 20px;
+}
+#community>img{
+    width: 10%;
+    margin-top: 30px;
+}
+#community>h1{
+    color: white;
+       
+}
+#com_hr{
+    width: 25%;
+    margin: auto;
+    border: none;
+    background-color: white;
+    height: 2px;
+}
+
+#community>button{
+    margin-top: 30px;
+padding: 20px 30px;
+border-radius: 8px;
+font-weight: bold;
+font-size: 20px;
+border: none;
+}
+
+#footer{
+    background-color: #71BDD5;
+   padding: 20px;
+    margin-top: 100px;
+}
+#footer>div{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+#footer>div>div>a{
+    display: block;
+   margin-bottom: 20px;
+   color: black;
+text-decoration: none;
+font-size: 20px;
+}
+#footer>div>div{
+    /* border: 1px solid red; */
+    width: 20%;
+}
+#footer>div>div>input{
+    width: 100%;
+    height: 50px;
+    border: none;
+}
+#payment,#media
+{
+    width:100%;
+    margin-top: 20px;
+}
+
+#sc_img{
+   width:  100%;
+}
+
+
+#responsive_nav{
+    display: none;
+}
+
+@media all and (min-width:320px) and (max-width:767px) {
+#responsive_nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  padding:0px 20px;
+  cursor: pointer;
+}
+#responsive_nav>img{
+    width: 10%;
+}
+.login_Container{
+      width: 50%;
+  gap: 10px;
+    }
+  
+    .log_in{
+   
+   
+      width: 50%;
+    
+    }
+  
+    .sign_up{
+     
+      width: 50%;
+     
+    }
+
+#desktop_nav{
+    display: none;
+}
+#pictures_section{
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 80px;
+    gap: 20px;
+}
+#apply_section{
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+
+}
+#apply_section>img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#school_opn,#waiting{
+    width: 90%;
+    flex-direction: column;
+}
+#waiting>img{
+    width: 100%;
+}
+#footer>div{
+    width: 100%;
+   
+    flex-direction: column;
+
+}
+#footer>div>div{
+    width: 100%;
+}
+#admission_school{
+    width: 90%;
+    flex-direction: column;
+}
+#admision_criteria{
+    margin-top: 100px;
+    /* height: 500px; */
+    background-color: #E9F4F8;
+    padding: 20px;
+}
+#admission_title{
+    text-align: center;
+
+
+}
+#admision_criteria>p{
+   
+    width: 80%;
+  
+}
+#nav_details{
+    flex-direction: column;
+    width: 90%;
+}
+#nav_img>img{
+    width: 100%;
+   border-radius: 12px;
+   margin-bottom: 10px;
+}
+#nav_desc{
+    width: 80%;
+    text-align: center;
+}
+#responsie_all_link{
+    
+flex-direction:column ;
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    top: 0;
+    height: 300px;
+
+    padding-bottom: 20px;
+}
+#close{
+    position: absolute;
+    right: 5%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#responsie_all_link>a{
+
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+
+}
+}
+@media all and (min-width:768px) and (max-width:1280px) {
+    #responsive_nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      padding:0px 20px;
+      cursor: pointer;
+    }
+    #responsive_nav>img{
+        width: 40px;
+    }
+    .login_Container{
+          width: 50%;
+      gap: 10px;
+        }
+      
+        .log_in{
+       
+       
+          width: 50%;
+        
+        }
+      
+        .sign_up{
+         
+          width: 50%;
+         
+        }
+    
+    #desktop_nav{
+        display: none;
+    }
+    #pictures_section{
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 80px;
+        gap: 20px;
+    }
+    #apply_section{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+    
+    }
+    #apply_section>img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    #school_opn,#waiting{
+        width: 90%;
+        flex-direction: column;
+    }
+    #waiting>img{
+        width: 100%;
+    }
+    #footer>div{
+        width: 100%;
+       
+        flex-direction: column;
+    
+    }
+    #footer>div>div{
+        width: 100%;
+    }
+    #admission_school{
+        width: 90%;
+        flex-direction: column;
+    }
+    #admision_criteria{
+        margin-top: 100px;
+        /* height: 500px; */
+        background-color: #E9F4F8;
+        padding: 20px;
+    }
+    #admission_title{
+        text-align: center;
+    
+    
+    }
+    #admision_criteria>p{
+       
+        width: 80%;
+      
+    }
+    #nav_details{
+        flex-direction: column;
+        width: 90%;
+    }
+    #nav_img>img{
+        width: 100%;
+       border-radius: 12px;
+       margin-bottom: 10px;
+    }
+    #nav_desc{
+        width: 80%;
+        text-align: center;
+    }
+    #responsie_all_link{
+        
+    flex-direction:column ;
+        position: absolute;
+        background-color: white;
+        width: 80%;
+        top: 0;
+        height: 300px;
+    
+        padding-bottom: 20px;
+    }
+    #close{
+        position: absolute;
+        right: 5%;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    #responsie_all_link>a{
+    
+        color: black;
+        text-decoration: none;
+        margin-top: 20px;
+    
+    }
+    }
