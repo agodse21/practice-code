@@ -1,0 +1,218 @@
+#main{
+    width: 80%;
+    display: flex;
+   margin: auto;
+  margin-top:  100px;
+  padding-bottom: 20px;
+  font-family: montserrat, sans-serif;
+    
+  }
+  #main>div{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    /* margin-right: 10px; */
+    /* border: 1px solid red */
+  }
+  #main>div>#save_label{
+    background-color: rgb(164, 164, 5);
+    width: 95%;
+    border-radius: 7px;
+    height: 50px;
+    margin-bottom: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #main>div>#label{
+    width: 95%;
+    border-radius: 7px;
+    height: 50px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #main>div:first-child{
+    width: 50%;
+   
+  }
+  #cartitem>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+  #cartitem>div>img{
+    border-radius: 5px;
+    width: 15%;
+    margin: 40px 0px 40px 100px;
+  }
+  #cartitem>#div1{
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color:#fcffee;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #cartitem>#div1>img{
+    width: 3%;
+    margin: 0px 20px;
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 5s;
+  }
+  @-webkit-keyframes run {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 50%;
+    }
+    20% {
+      left: 50%;  
+    }
+  }
+  #cartitem>#head{
+    font-size: 18px;
+   text-align: left;
+   margin: 30px 0px;
+  }
+  #cartitem>#head>span{
+    font-size: 14px;
+    font-weight: lighter;
+   
+  }
+  .card>#mySelect{
+   width: 70px;
+   border-radius: 4px;
+   margin:10px 10px 10px 0px ;
+   padding: 5px;
+   
+  }
+  .card>p{
+    font-size: 13px;
+  }
+  .card>#mySelect2{
+    width: 70px;
+   border-radius: 4px;
+   margin:10px 10px 10px 0px ;
+   padding: 5px;
+  }
+  .card>#delete_btn{
+    width: 80px;
+    padding: 10px;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card>#wishlist_btn{
+    width: 150px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card>#price::before{
+    content:"\20B9";
+    }
+  
+  /* 
+  img{
+    width: 120px;
+    height: 150px;
+  }
+  h2{
+    font-size: 15px;
+  }
+  p{
+    font-size: 14px;
+  } */
+  
+  #total>div{
+  width: 100%;
+  
+  color:black;
+  padding: 10px;
+  
+  }
+  .totalprice{
+  
+  font-size: 25px;
+  }
+  
+  #price_section>h1{
+    font-size: 20px;
+  
+    text-align: left;
+    margin: 10px;
+  
+  }
+  table{
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+  border-collapse: collapse;
+  }
+  thead td{
+  font-size: 18px;
+  
+  }
+  tbody td{
+  padding-top: 10px;
+  font-size: 18px;
+  }
+  #saving_show{
+    background-color: #e8f3e5;
+    margin: auto;
+    width: 80%;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  #placeorderbtn{
+  display: block;
+  margin: auto;
+  width: 80%;
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 10px 30px;
+  background-color: teal;
+  border: none;
+  }
+  #placeorderbtn:hover{
+  color: white;
+  cursor: pointer;
+  background-color: orangered;
+  }
+  #promobtn{
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  
+  }
+  #promobtn:hover{
+  cursor: pointer;
+  color: white;
+  background-color: orangered;
+  }
+  
