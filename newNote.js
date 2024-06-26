@@ -16,3 +16,4 @@ btn.addEventListener("click", function () {
   localStorage.setItem("notes", JSON.stringify(data));
   window.location.reload();
 });
+btn.setAttributes("class","easy_edit")
