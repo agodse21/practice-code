@@ -9,7 +9,8 @@
     display: flex;
     justify-content:space-around;
     align-items: center;
-   
+    
+   align-items: center;
 }
 #nav_desc{
     
