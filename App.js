@@ -8,6 +8,8 @@ function App() {
   return (
     <Box>
       <AllRoutes />
+
+    div
     </Box>
   );
 }
