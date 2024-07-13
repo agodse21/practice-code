@@ -6,6 +6,7 @@ total_notes.textContent = data.length;
 
 //if deleted notes having length !=0 then Append deleted_notes in this div
 let notes_container = document.getElementById("notes_container");
+let notes_container = document.getElementById("notes_container");
 
 // if deleted notes having length= 0
 let h1 = document.createElement("h1");
