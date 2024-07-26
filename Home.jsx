@@ -9,8 +9,6 @@ export const Home = () => {
   if (!state.isAuth) {
     navigate("/login");
   }
-   if (!state.isAuth) {
-    navigate("/log-out");
-  }
+   
   return <div>Home</div>;
 };
