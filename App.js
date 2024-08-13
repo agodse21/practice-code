@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import {react} from "react";
-import "./App.css";
+import "./index.css";
 import {BrowserRouter} from "react-router-dom"
 
 import { AllRoutes } from "./Routes/AllRoutes";
