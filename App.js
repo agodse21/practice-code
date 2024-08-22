@@ -10,7 +10,7 @@ function App() {
     <Box>
       <AllRoutes />
 
-    div
+    
     </Box>
   );
 }
