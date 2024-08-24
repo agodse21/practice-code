@@ -1,2 +1,2 @@
-document.getElementById("data")
+document.getElementById("dataId")
 document.getElementById("id")
