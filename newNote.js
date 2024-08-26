@@ -2,7 +2,7 @@
 let data = JSON.parse(localStorage.getItem("notes")) || [];
 
 let total_notes = document.getElementById("total_notes"); // to add no of notes
-total_notes.textContent = data.length;
+total_notes.textContent = data.length ?? 0;
 
 let btn = document.getElementById("add_note");
 btn.addEventListener("click", function () {
