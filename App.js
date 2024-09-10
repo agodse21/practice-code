@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import {react} from "react";
 import "./app.css";
-import {BrowserRouter} from "react-router-dom"
+import {Router} from "react-router-dom"
 import { AllRoutes } from "./Routes/AllRoutes";
 
 function App() {
