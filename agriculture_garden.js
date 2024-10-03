@@ -1,2 +1,2 @@
 document.getElementById("dataId")
-document.getElementById("id")
+document.getElementById("id").style
