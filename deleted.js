@@ -32,8 +32,10 @@ function disPlay() {
     btn.textContent = "addAgain_btn";
     btn.setAttribute("addAgain_btn");
     btn.addEventListener("click", function () {});
+   btn.setAttribute("class","btn");
     box.append(h3, desc, btn);
     notes_container.append(box);
+    
   });
 }
 
