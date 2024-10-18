@@ -8,7 +8,9 @@ export const Home = () => {
   const state = useTrackedState();
 
   if (!state.isAuth) {
-    navigate("/login");
+    navigate({
+      to:"/login"
+    });
   }
    
   return <div>Home</div>;
