@@ -1,5 +1,5 @@
 // add js part for newNote page here
-let data = JSON.parse(localStorage.getItem("notes")) || [];
+let data = JSON.parse(localStorage.getItem("notes"))
 
 let total_notes = document.getElementById("total_notes"); // to add no of notes
 total_notes.textContent = data.length ;
