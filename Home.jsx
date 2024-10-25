@@ -6,8 +6,8 @@ import "./app.css";
 export const Home = () => {
   const navigate = useNavigate();
   const state = useTrackedState();
-
-  if (!state.isAuth) {
+const isAuth=!state.isAuth??false
+  if (isAuth) {
     navigate({
       to:"/login"
     });
