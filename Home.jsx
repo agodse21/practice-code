@@ -9,7 +9,7 @@ export const Home = () => {
 const isAuth=!state.isAuth??false
   if (isAuth) {
     navigate({
-      to:"/login"
+      to:"/login_page"
     });
   }
    
