@@ -1,6 +1,6 @@
 function sleep() {
   // console.log(typeof(time))
-  let time=2000;
+  let time=1000;
 return new Promise((res, rej) => {
     if (typeof time != Number) {
       rej("Please Type a number");
