@@ -1,6 +1,6 @@
 
 
- document.querySelector("#btn").value="SIGN UP";
+ const signUpValue=document.querySelector("#btn").value="SIGN UP";
 
 document.querySelector("form").addEventListener("submit", myfun);
 let infoArr= JSON.parse(localStorage.getItem("details")) || [];
