@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const form = document.getElementById('form')?? null;
 const solutionDiv = document.getElementById('solution');
 let blocks;
 form.addEventListener('submit', (e) => {
